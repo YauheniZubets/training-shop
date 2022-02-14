@@ -1,0 +1,138 @@
+.Womens {
+    padding-top: 96px;
+}
+.Womens-Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 52px;
+}
+.Womens-Name {
+    /* float: left; */
+}
+.Womens-Name>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
+.Womens-Links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 670px;
+}
+.Womens-Links span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: right;
+    letter-spacing: 0.06em;
+    color: #121212;
+}
+.Womens-AllCards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.Womens-Card {
+    padding-bottom: 30px;
+}
+.Womens-Card-Image {
+    width: 255px;
+    height: 302px;
+    position: relative;
+    margin-bottom: 16px;
+}
+.Womens-Card-Name {
+    padding-bottom: 12px;
+    float: left;
+}
+.Womens-Card-Name>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #121212;
+    opacity: 0.6;
+}
+.Womens-Card-Price {
+    clear: left;
+    float: left;
+}
+.Womens-Card-Price>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #121212;
+}
+.Women-Card-Stars {
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+.Womens-Card-DiscountText {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+    color: #FFFFFF;
+    vertical-align: middle;
+}
+.Womens-Card-Discount {
+    background: #E91E63;
+    width: 53px;
+    height: 31px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Womens-Card-Price-Disc {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    text-decoration-line: line-through;
+    color: #121212;
+    opacity: 0.4;
+    padding-left: 4px;
+}
+.Womens-See-All {
+    margin-top: 48px;
+    background: #F8F8F8;
+    border: 2px solid #F8F8F8;
+    box-sizing: border-box;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.Womens-See-All>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.8;
+}

@@ -1,0 +1,110 @@
+
+.Navigation {
+    min-height: 24px;
+    margin: 0 auto;
+}
+.SocialAndContact {
+    background: #121212;
+}
+.Main-Info {
+    max-width: 85%;
+    margin: 0 auto;
+    
+}
+.Contacts {
+    display: flex;
+    justify-content: space-between;
+}
+.Left-Cont {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+.NaviInfo {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 12px;
+
+    color: #FFFFFF;
+
+    opacity: 0.8;
+    padding-left: 10px;
+}
+.Social > img {
+    padding-right: 12px;
+}
+.All-Links {
+    height: 66px;
+}
+.Header {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    justify-content: space-between;
+}
+.All-Links a {
+    text-decoration: none;
+}
+.Shop-Name {
+    width: 150px;
+    height: 32px;
+}
+.Shop-Name span {
+    font-family: Playfair Display SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    color: #121212;
+}
+.Nav-Links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 530px;
+    padding-top: 5px;
+}
+.Nav-Links span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #121212;
+}
+.Nav-Links a {
+    height: 18px;
+}
+.Search-Bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 170px;
+    margin-right: -25px;
+    padding-top: 5px;
+}
+.Search-Bar>div:last-child {
+    position: relative;
+    left: -30px;
+    top: -6px;
+    border-radius: 50%;
+    background-color: black;
+    height: 16px;
+    width: 16px;
+}
+.Search-Bar>div:last-child>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 9px;
+    line-height: 18px;
+    color: #FFFFFF;
+    display:block;
+    /* width:100%; */
+    /* height: 100%; */
+    margin: 0 auto;
+
+}
+

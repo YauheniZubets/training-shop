@@ -1,0 +1,39 @@
+.Support {
+    height: 106px;
+}
+.Support-Info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 35px;
+    
+}
+.Support-Info>div {
+    flex-basis: 350px;
+}
+.Support-Info-Image {
+    float: left;
+    padding-right: 13px;
+}
+.Support-Name span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    float: left;
+}
+.Support-Descr {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.9;
+    float: left;
+}

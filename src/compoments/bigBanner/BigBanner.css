@@ -1,0 +1,95 @@
+.Big-Banner-section {
+    padding-top: 96px;
+}
+.Big-Banner-image {
+    height: 580px;
+    position: relative;
+    margin: 0 auto;
+    
+}
+.Big-Banner-size-top {
+    top: 11%;
+    left: 16%;
+}
+.Big-Banner-size {
+    width: 66%;
+    height: 75%;
+    background: #FFFFFF;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.Big-Banner-size>span:first-child {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.4;
+}
+.Big-Banner-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
+.Big-Banner-input {
+    background: #F8F8F8;
+    width: 340px;
+    height: 64px;
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: #121212;
+    opacity: 0.4;
+    text-align: center;
+    box-sizing: border-box;
+}
+.Big-Banner-button {
+    width: 340px;
+    height: 64px;
+    background: #121212;
+    border: 2px solid #121212;
+    box-sizing: border-box;
+}
+.Big-Banner-button>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+.Big-Banner-image-girl {
+    position: absolute;
+    width: 25%;
+    height: 94%;
+    z-index: 2;
+    top: 9%;
+    left: -2%;
+}
+.Big-Banner-image-boy {
+    position: absolute;
+    width: 25%;
+    height: 94%;
+    z-index: 3;
+    top: 9%;
+    right: 0%;
+}
