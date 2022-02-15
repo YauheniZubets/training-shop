@@ -61,19 +61,19 @@ const Footer = () => {
                     <div className='Footer-links-contacts Footer-links-flex'>
                         <div>CONTACT US</div>
                         <div>
-                            <img src={mapLogo}></img>
+                            <img src={mapLogo} alt='map-logo'></img>
                             <span>Belarus, Gomel, Lange 17</span>
                         </div>
                         <div>
-                            <img src={phoneLogo}></img>
+                            <img src={phoneLogo} alt='phone-logo'></img>
                             <span>+375 29 100 20 30</span>
                         </div>
                         <div>
-                            <img src={clockLogo}></img>
+                            <img src={clockLogo} alt='clock-logo'></img>
                             <span>All week 24/7</span>
                         </div>
                         <div>
-                            <img src={letterLogo}></img>
+                            <img src={letterLogo} alt='letter-logo'></img>
                             <span>info@clevertec.ru</span>
                         </div>
                     </div>
