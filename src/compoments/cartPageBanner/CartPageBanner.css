@@ -1,14 +1,14 @@
-.Women-Page-Banner-bord {
+.Cart-Page-Banner-bord {
     height: 32px;
     background: #F8F8F8;
 }
-.Women-Page-Banner-Top {
+.Cart-Page-Banner-Top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.Women-Page-Banner-Top>div>span:first-child {
+.Cart-Page-Banner-Top>div>span:first-child {
     font-family: Spartan;
     font-style: normal;
     font-weight: 500;
@@ -18,7 +18,7 @@
     opacity: 0.6;
     padding-right: 6px;
 }
-.Women-Page-Banner-Top>div>span:nth-child(2) {
+.Cart-Page-Banner-Top>div>span:nth-child(even) {
     font-family: Spartan;
     font-style: normal;
     font-weight: 500;
@@ -27,23 +27,34 @@
     color: #121212;
     padding-right: 6px;
 }
-.Women-Page-Banner-Top>div>span:last-child {
+.Cart-Page-Banner-Top>div>span:nth-child(3) {
     font-family: Spartan;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
     line-height: 18px;
     color: #121212;
+    padding-right: 6px;
+    opacity: 0.6;
 }
-.Women-Page-Banner-Top>div>img {
+.Cart-Page-Banner-Top>div>span:last-child {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+    color: #121212;
+    padding-right: 6px;
+}
+.Cart-Page-Banner-Top>div>img {
     padding-top: 8px;
     padding-right: 10px;
 }
-.Women-Page-Banner-bord-bottom {
+.Cart-Page-Banner-bord-bottom {
     height: 70px;
     background: #F8F8F8;
 }
-.Women-Page-Banner-name>span {
+.Cart-Page-Banner-name>span {
     font-family: Spartan;
     font-style: normal;
     font-weight: 600;
@@ -76,4 +87,42 @@
 }
 .Filter-content>div:last-child>img {
     padding-right: 32px;
+}
+
+.Cart-Page-Banner-bord-footer {
+    
+    background: #F8F8F8;
+}
+.Cart-Page-Banner-bord-footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Cart-Page-Banner-bord-footer-span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 26px;
+    color: #121212;
+    opacity: 0.6;
+    padding-left: 8px;
+}
+.Cart-Page-Banner-bord-footer-content-bot>span:nth-child(odd) {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+    color: #121212;
+    opacity: 0.6;
+}
+.Cart-Page-Banner-bord-footer-content-bot>span:nth-child(even) {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 18px;
+    color: #121212;
+    padding-right: 24px;
 }

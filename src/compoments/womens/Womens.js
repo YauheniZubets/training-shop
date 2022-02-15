@@ -68,7 +68,9 @@ const Womens = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='Womens-Card'><div className='Womens-Card-Image' style={{background:`url(${women3}) no-repeat center center`}}></div>
+                    <div className='Womens-Card'>
+                        <div className='Womens-Card-Image' style={{background:`url(${women3}) no-repeat center center`}}>
+                        </div>
                         <div className='Womens-Card-Descr'>
                             <div className='Womens-Card-Name'>
                                 <span>Women's tracksuit Q109</span>
@@ -85,7 +87,9 @@ const Womens = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='Womens-Card'><div className='Womens-Card-Image' style={{background:`url(${women4}) no-repeat center center`}}></div>
+                    <div className='Womens-Card'>
+                        <div className='Womens-Card-Image' style={{background:`url(${women4}) no-repeat center center`}}>
+                        </div>
                         <div className='Womens-Card-Descr'>
                             <div className='Womens-Card-Name'>
                                 <span>Women's tracksuit Q109</span>
@@ -119,7 +123,9 @@ const Womens = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='Womens-Card'><div className='Womens-Card-Image' style={{background:`url(${women6}) no-repeat center center`}}></div>
+                    <div className='Womens-Card'>
+                        <div className='Womens-Card-Image' style={{background:`url(${women6}) no-repeat center center`}}>
+                        </div>
                         <div className='Womens-Card-Descr'>
                             <div className='Womens-Card-Name'>
                                 <span>Women's tracksuit Q109</span>
@@ -137,7 +143,8 @@ const Womens = () => {
                         </div>
                     </div>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women7}) no-repeat center center`}}></div>
+                        <div className='Womens-Card-Image' style={{background:`url(${women7}) no-repeat center center`}}>
+                        </div>
                         <div className='Womens-Card-Descr'>
                             <div className='Womens-Card-Name'>
                                 <span>Women's tracksuit Q109</span>
@@ -151,6 +158,7 @@ const Womens = () => {
                                 <div><img src={fullStar} alt='star' /></div>
                                 <div><img src={fullStar} alt='star' /></div>
                                 <div><img src={emptyStar} alt='estar' /></div>
+                            </div>
                         </div>
                     </div>
                     <div className='Womens-Card'>
@@ -175,7 +183,6 @@ const Womens = () => {
                 <div className='Womens-See-All'>
                     <span>See All</span>
                 </div>
-            </div>
         </section>
     )
 }

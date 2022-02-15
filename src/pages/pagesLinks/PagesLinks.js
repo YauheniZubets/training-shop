@@ -48,7 +48,7 @@ const PagesLinks = () => {
                         <Link to='/'><span>About Us</span></Link>
                         <Link to='/women'><span>Women</span></Link>
                         <Link to='/men'><span>Men</span></Link>
-                        <Link to='/'><span>Beauty</span></Link>
+                        <Link to='/cart'><span>Beauty</span></Link>
                         <Link to='/'><span>Accessories</span></Link>
                         <Link to='/'><span>Blog</span></Link>
                         <Link to='/'><span>Contact</span></Link>

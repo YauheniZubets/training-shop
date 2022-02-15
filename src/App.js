@@ -3,6 +3,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import PagesLinks from './pages/pagesLinks/PagesLinks';
 import PageWomen from './pages/pageWomen/PageWomen';
 import PageMen from './pages/pagesMen/pageMen';
+import PageCart from './pages/pagesCart/pageCart';
 import Footer from './compoments/footer/Footer';
 import Main from './compoments/main/Main';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Main/>} />
           <Route path='/women' element={<PageWomen/>} />
           <Route path='/men' element={<PageMen/>} />
+          <Route path='/cart' element={<PageCart/>} />
         </Routes>
         <Footer />
       </HashRouter>

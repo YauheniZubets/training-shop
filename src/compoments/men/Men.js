@@ -146,6 +146,7 @@ const Men = () => {
                                 <div><img src={fullStar} alt='star' /></div>
                                 <div><img src={fullStar} alt='star' /></div>
                                 <div><img src={emptyStar} alt='estar' /></div>
+                            </div>
                         </div>
                     </div>
                     <div className='Womens-Card'>
@@ -171,7 +172,6 @@ const Men = () => {
                 <div className='Womens-See-All'>
                     <span>See All</span>
                 </div>
-            </div>
         </section>
     )
 }
