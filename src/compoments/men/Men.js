@@ -36,11 +36,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
                     </div>
@@ -55,11 +55,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
                     </div>
@@ -72,11 +72,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
                     </div>
@@ -89,11 +89,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
                     </div>
@@ -106,11 +106,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
                     </div>
@@ -123,11 +123,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
                     </div>
@@ -141,12 +141,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
-                            </div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                         </div>
                     </div>
                     <div className='Womens-Card'>
@@ -159,11 +158,11 @@ const Men = () => {
                                 <span>$ 30.00</span>
                             </div>
                             <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={fullStar} /></div>
-                                <div><img src={emptyStar} /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={fullStar} alt='star' /></div>
+                                <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
                     </div>

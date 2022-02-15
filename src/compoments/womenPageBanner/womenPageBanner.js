@@ -17,7 +17,7 @@ const WomenPageBanner = () => {
                             <span>Women</span>
                         </div>
                         <div>
-                            <img src={share} />
+                            <img src={share} alt='share' />
                             <span>Share</span>
                         </div>
                     </div>
@@ -32,12 +32,12 @@ const WomenPageBanner = () => {
                 <div className='Main-Info'>
                     <div className='Filter-content'>
                         <div>
-                            <img src={filter} />
+                            <img src={filter} alt='filter' />
                             <span>Filter</span>
                         </div>
                         <div>
-                            <img src={sort} />
-                            <img src={view} />
+                            <img src={sort} alt='sort' />
+                            <img src={view} alt='view' />
                         </div>
                     </div>
                 </div>

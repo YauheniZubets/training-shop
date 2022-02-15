@@ -86,13 +86,13 @@ const Footer = () => {
                             <span>Copyright © 2032 all rights reserved</span>
                         </div>
                         <div>
-                            <img src={stripe} />
-                            <img src={aes} />
-                            <img src={paypal} />
-                            <img src={visa} />
-                            <img src={master} />
-                            <img src={discover} />
-                            <img src={american} />
+                            <img src={stripe} alt='stripe-logo' />
+                            <img src={aes} alt='aes-logo' />
+                            <img src={paypal} alt='paypal-logo' />
+                            <img src={visa} alt='visa-logo' />
+                            <img src={master} alt='master-logo' />
+                            <img src={discover} alt='discover-logo' />
+                            <img src={american} alt='american-logo' />
                         </div>
                         <div>
                             <span>Clevertec.ru/training</span>

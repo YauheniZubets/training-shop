@@ -12,7 +12,7 @@ const Support = () => {
                 <div className='Support-Info'>
                     <div>
                         <div className='Support-Info-Image'>
-                            <img src={carIcon} />
+                            <img src={carIcon} alt='carIcon-logo' />
                         </div>
                         <div className='Support-Name'>
                             <span>FREE SHIPPING</span>
@@ -23,7 +23,7 @@ const Support = () => {
                     </div>
                     <div>
                         <div className='Support-Info-Image'>
-                            <img src={returnIcon} />
+                            <img src={returnIcon} alt='return-logo' />
                         </div>
                         <div className='Support-Name'>
                             <span>30 DAYS RETURN</span>
@@ -34,7 +34,7 @@ const Support = () => {
                     </div>
                     <div>
                         <div className='Support-Info-Image'>
-                            <img src={supportIcon} />
+                            <img src={supportIcon} alt='support-logo' />
                         </div>
                         <div className='Support-Name'>
                             <span>SUPPORT 24/7</span>

@@ -6,10 +6,10 @@ import PicasaLogo from './img/picasa.svg';
 const Social = () => {
     return (
         <div className='Social'>
-            <img src={FacebookLogo}></img>
-            <img src={TwitterLogo}></img>
-            <img src={InstagramLogo}></img>
-            <img src={PicasaLogo}></img>
+            <img src={FacebookLogo} alt='facebook-logo'></img>
+            <img src={TwitterLogo} alt='twitter-logo'></img>
+            <img src={InstagramLogo} alt='instagram-logo'></img>
+            <img src={PicasaLogo} alt='picasa-logo'></img>
         </div>
     )
 }
