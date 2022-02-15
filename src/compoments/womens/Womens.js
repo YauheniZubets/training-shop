@@ -170,7 +170,7 @@ const Womens = () => {
                                 <div><img src={emptyStar} alt='estar' /></div>
                             </div>
                         </div>
-                    </div>
+                    </div></div>
                 </div>
                 <div className='Womens-See-All'>
                     <span>See All</span>

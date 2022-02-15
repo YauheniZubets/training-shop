@@ -166,6 +166,7 @@ const Men = () => {
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
                 <div className='Womens-See-All'>
                     <span>See All</span>
