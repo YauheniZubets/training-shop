@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import PagesLinks from './pages/pagesLinks/PagesLinks';
 import PageWomen from './pages/pageWomen/PageWomen';

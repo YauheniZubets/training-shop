@@ -18,10 +18,10 @@ class Header extends React.PureComponent {
                     <div className="Main-Content">
                         <div className="Large-Image" style={{background:`url(${LargeImage}) no-repeat center center`}}>
                             <div className="Arrow Arrow-Left">
-                                <img className="Arrow-center" src={LeftArrow} />
+                                <img className="Arrow-center" src={LeftArrow} alt='leftaroow' />
                             </div>
                             <div className="Arrow Arrow-Right">
-                                <img className="Arrow-center" src={RightArrow} />
+                                <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
                             </div>
                             <div className="Banner Banner-Center Big-Banner">
                                 <span>Banner</span><br />

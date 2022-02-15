@@ -5,9 +5,7 @@ import ClockLogo from './ClockLogo.svg';
 import Search from './search.svg';
 import World from './world.svg';
 import Login from './login.svg';
-import Head from './head.svg';
 import Cart from './cart.svg';
-import Ellipse from './ellipse.svg';
 
 import Social from '../../compoments/social/Social';
 
@@ -23,15 +21,15 @@ const PagesLinks = () => {
                     <div className='Contacts'>
                         <div className='Left-Cont'>
                             <div className='Phone'>
-                                <img src={PhoneLogo}></img>
+                                <img src={PhoneLogo} alt='phone'></img>
                                 <span className='NaviInfo'>+375 29 100 20 30</span>
                             </div>
                             <div className='Location'>
-                                <img src={MapPoint}></img>
+                                <img src={MapPoint} alt='map'></img>
                                 <span className='NaviInfo'>Belarus, Gomel, Lange 17</span>
                             </div>
                             <div>
-                                <img src={ClockLogo}></img>
+                                <img src={ClockLogo} alt='clock'></img>
                                 <span className='NaviInfo'>All week 24/7</span>
                             </div>
                         </div>
@@ -56,12 +54,12 @@ const PagesLinks = () => {
                         <Link to='/'><span>Contact</span></Link>
                     </div>
                     <div className='Search-Bar'>
-                        <div><img src={Search} /></div>
-                        <div><img src={World} /></div>
+                        <div><img src={Search} alt='search'/></div>
+                        <div><img src={World} alt='world'/></div>
                         <div>
-                            <img src={Login} />
+                            <img src={Login} alt='login' />
                         </div>
-                        <div><img src={Cart} /></div>
+                        <div><img src={Cart} alt='cart' /></div>
                         <div><span>2</span></div>
                     </div>
                 </div>

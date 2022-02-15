@@ -6,7 +6,6 @@ import Men from "../men/Men";
 import SmallBanner from "../smallBanner/SmallBanner";
 import BigBanner from "../bigBanner/BigBanner";
 import Blog from "../Blog/Blog";
-import Footer from "../footer/Footer";
 
 import './Main.css';
 
