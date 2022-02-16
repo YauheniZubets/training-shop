@@ -4,7 +4,7 @@ import WomenPageBanner from "../../compoments/womenPageBanner/womenPageBanner";
 const PageMen = () => {
     return ( <>
                 <WomenPageBanner />
-                <Men />
+                <Men data-test-id='product-page-women' />
             </>
         
     )

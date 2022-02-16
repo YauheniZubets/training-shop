@@ -208,7 +208,7 @@ const CartPageBody = () => {
                         </div>
                     </div>
                     <div className='Cart-page-body-footer-cards'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/women' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${fotWomen1}) no-repeat center center`}}></div>
                             <div className='Womens-Card-Descr'>
                                 <div className='Womens-Card-Name'>
@@ -226,7 +226,7 @@ const CartPageBody = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/women' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${fotWomen2}) no-repeat center center`}}></div>
                             <div className='Womens-Card-Descr'>
                                 <div className='Womens-Card-Name'>
@@ -244,7 +244,7 @@ const CartPageBody = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/women' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${fotWomen3}) no-repeat center center`}}></div>
                             <div className='Womens-Card-Descr'>
                                 <div className='Womens-Card-Name'>
@@ -262,7 +262,7 @@ const CartPageBody = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/women' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${fotWomen4}) no-repeat center center`}}></div>
                             <div className='Womens-Card-Descr'>
                                 <div className='Womens-Card-Name'>
