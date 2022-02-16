@@ -17,7 +17,8 @@ function App() {
           <Route path='/' element={<Main/>} />
           <Route path='/women' element={<PageWomen/>} />
           <Route path='/men' element={<PageMen/>} />
-          <Route path='/cart' element={<PageCart/>} />
+          <Route path='/cart/women/1' element={<PageCart/>} />
+          <Route path='/cart/men/1' element={<PageCart/>} />
         </Routes>
         <Footer />
       </HashRouter>

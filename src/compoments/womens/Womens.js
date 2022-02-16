@@ -29,7 +29,7 @@ const Womens = () => {
                 </div>
                 <div className='Womens-AllCards'>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women1}) no-repeat center center`}}></div>
                             <div className='Womens-Card-Descr'>
                                 <div className='Womens-Card-Name'>
@@ -49,7 +49,7 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women2}) no-repeat center center`}}>
                                 <div className='Womens-Card-Discount'>
                                     <span className='Womens-Card-DiscountText'>-50%</span>
@@ -74,7 +74,7 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women3}) no-repeat center center`}}>
                             </div>
                             <div className='Womens-Card-Descr'>
@@ -95,7 +95,7 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women4}) no-repeat center center`}}>
                             </div>
                             <div className='Womens-Card-Descr'>
@@ -116,7 +116,7 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women5}) no-repeat center center`}}>
                             </div>
                             <div className='Womens-Card-Descr'>
@@ -137,7 +137,7 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women6}) no-repeat center center`}}>
                             </div>
                             <div className='Womens-Card-Descr'>
@@ -158,7 +158,7 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women7}) no-repeat center center`}}>
                             </div>
                             <div className='Womens-Card-Descr'>
@@ -179,7 +179,7 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <Link to='/cart' data-test-id='clothes-card-women'>
+                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${women8}) no-repeat center center`}}>
                             </div>
                             <div className='Womens-Card-Descr'>
