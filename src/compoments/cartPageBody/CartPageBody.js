@@ -17,6 +17,22 @@ import compare from './img/compare.svg';
 import shipping from './img/shipping.svg';
 import ret from './img/return.svg';
 import question from './img/question.svg';
+import aes from './img/aes.png';
+import stripe from './img/stripe.png';
+import paypal from './img/paypal.png';
+import visa from './img/visa.png';
+import mastercard from './img/mastercard.png';
+import discover from './img/discover.png';
+import american from './img/american.png';
+import fullStar from './img/fullStar.svg';
+import emptyStar from './img/emptyStar.svg';
+import fullStarSmall from './img/fullStarSmall.svg';
+import fotWomen1 from './img/fotwomen1.png';
+import fotWomen2 from './img/fotwomen2.png';
+import fotWomen3 from './img/fotwomen3.png';
+import fotWomen4 from './img/fotwomen4.png';
+
+import { Link } from 'react-router-dom';
 
 import './CartPageBody.css';
 
@@ -94,6 +110,176 @@ const CartPageBody = () => {
                                 <span>Ask a question</span>
                             </div>
                         </div>
+                        <div className='Cart-checkoutline'>
+                            <div><span>guaranteed safe checkout</span></div>
+                            <div className='Bottom-bord'></div>
+                        </div>
+                        <div className="Cart-credit">
+                            <img src={stripe} alt='stripe' />
+                            <img src={aes} alt='aes' />
+                            <img src={paypal} alt='paypal' />
+                            <img src={visa} alt='visa' />
+                            <img src={mastercard} alt='mastercard' />
+                            <img src={discover} alt='discover' />
+                            <img src={american} alt='american' />
+                        </div>
+                        <div className='Bottom-bord'></div>
+                        <div className='Cart-description'>
+                            <span>DESCRIPTION</span>
+                        </div>
+                        <div className='Bottom-bord'></div>
+                        <div className='Cart-additional'>
+                            <div>
+                                <span>ADDITIONAL INFORMATION</span>
+                            </div>
+                            <div className='Cart-additional-content'>
+                                <div>
+                                    <span>Color: </span><span>Blue, White, Black, Grey</span>
+                                </div>
+                                <div>
+                                    <span>Size: </span><span>XS, S, M, L</span>
+                                </div>
+                                <div>
+                                    <span>Material: </span><span>100% Polyester</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='Bottom-bord'></div>
+                        <div className='Cart-reviews'>
+                            <div className='Cart-reviews-name'><span>REVIEWS</span></div>
+                            <div className='Cart-reviews-stars' >
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <span className='Cart-Page-Banner-bord-footer-span'>2 Reviews</span>
+                                </div>
+                                <div>
+                                    <img src={question} alt='quis' />
+                                    <span>Write a review</span>
+                                </div>
+                            </div>
+                            <div className='Cart-reviews-content'>
+                                <div>
+                                    <div className='Cart-reviews-content-author'>
+                                        <div><span>Oleh Chabanov</span></div>
+                                        <div className='Women-Card-Stars'>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                        </div>
+                                    </div>
+                                    <div className='Cart-reviews-content-text'>
+                                        <span>On the other hand, we denounce with righteous indignation and like men who are so beguiled and demoralized by the charms of pleasure of the moment</span>
+                                    </div>
+                                    <div className='Cart-reviews-content-author'>
+                                        <div><span>ShAmAn design</span></div>
+                                        <div className='Women-Card-Stars'>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                            <div><img src={fullStarSmall} alt='star' /></div>
+                                        </div>
+                                    </div>
+                                    <div className='Cart-reviews-content-text'>
+                                        <span>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='Bottom-bord'></div>
+                        </div>
+                    </div>
+                </div>
+                <div className='Cart-page-body-footer'>
+                    <div className='Cart-page-body-footer-name'>
+                        <div><span>RELATED PRODUCTS</span></div>
+                        <div className='Cart-page-body-footer-arrows'>
+                            <div className="Arrow">
+                                <img className="Arrow-center" src={LeftArrow} alt='leftaroow' />
+                            </div>
+                            <div className="Arrow">
+                                <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='Cart-page-body-footer-cards'>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen1}) no-repeat center center`}}></div>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen2}) no-repeat center center`}}></div>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen3}) no-repeat center center`}}></div>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen4}) no-repeat center center`}}></div>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

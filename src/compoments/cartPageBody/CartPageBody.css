@@ -173,3 +173,176 @@
     padding-left: 9px;
     padding-right: 28px;
 }
+.Cart-checkoutline {
+    display: flex;
+    flex-direction: row;
+    padding-top: 32px;
+}
+.Cart-checkoutline>div:first-child {
+    flex-basis: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.Cart-checkoutline>div:first-child>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 31px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    padding-right: 24px;
+}
+.Cart-checkoutline>div:last-child {
+    flex-grow: 1;
+}
+.Cart-credit {
+    padding-top: 23px;
+}
+.Cart-credit>img {
+    text-align: left;
+    padding-right: 16px;
+}
+.Cart-description {
+    padding-top: 20px;
+    text-align: left;
+}
+.Cart-description>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.6;
+}
+.Cart-additional {
+    text-align: left;
+    padding-top: 20px;
+}
+.Cart-additional>div:first-child {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    padding-bottom: 32px;
+}
+.Cart-additional-content>div>span:first-child{
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #121212;
+}
+.Cart-additional-content>div>span:last-child{
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.6;
+}
+.Cart-reviews {
+    display: flex;
+    flex-direction: column;
+}
+.Cart-reviews-name {
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 34px;
+}
+.Cart-reviews-name>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
+.Cart-reviews-stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Cart-reviews-stars>div:last-child>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #121212;
+    opacity: 0.6;
+    padding-left: 6px;
+}
+.Cart-reviews-content-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 27px;
+}
+.Cart-reviews-content-author>div {
+    text-align: left;
+}
+.Cart-reviews-content-author>div:first-child>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #121212;
+}
+.Cart-reviews-content-text {
+    text-align: left;
+    padding-top: 12px;
+}
+.Cart-reviews-content-text>span {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.8;
+}
+.Cart-page-body-footer {
+    display: flex;
+    flex-direction: column;
+}
+.Cart-page-body-footer-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 48px;
+}
+.Cart-page-body-footer-name>div:first-child>span{
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
+.Cart-page-body-footer-arrows>div {
+    position: relative;
+    float: left;
+}
+.Cart-page-body-footer-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

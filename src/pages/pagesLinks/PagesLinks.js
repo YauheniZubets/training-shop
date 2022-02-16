@@ -45,13 +45,13 @@ const PagesLinks = () => {
                         </Link>
                     </div>
                     <div className='Nav-Links' data-test-id='menu'>
-                        <Link><span>About Us</span></Link>
+                        <Link to='/'><span>About Us</span></Link>
                         <Link to='/women' data-test-id='menu-link-women'><span>Women</span></Link>
                         <Link to='/men' data-test-id='menu-link-men'><span>Men</span></Link>
-                        <Link to='/cart' ><span>Beauty</span></Link>
-                        <Link><span>Accessories</span></Link>
-                        <Link><span>Blog</span></Link>
-                        <Link><span>Contact</span></Link>
+                        <Link to='/'><span>Beauty</span></Link>
+                        <Link to='/'><span>Accessories</span></Link>
+                        <Link to='/'><span>Blog</span></Link>
+                        <Link to='/'><span>Contact</span></Link>
                     </div>
                     <div className='Search-Bar'>
                         <div><img src={Search} alt='search'/></div>

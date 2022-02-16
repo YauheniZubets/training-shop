@@ -13,6 +13,7 @@
     justify-content: space-between;
     flex-basis: 540px;
     height: 490px;
+    flex-shrink: 1;
 }
 .MenWomanBanner {
     display: flex;
@@ -23,7 +24,8 @@
 .Large-Image {
     position: relative;
     flex-basis: 540px;
-    height: 490px;   
+    height: 490px;
+    flex-shrink: 1;
 }
 .Arrow {
     background: #FFFFFF;
@@ -129,6 +131,35 @@
     position: absolute;
     top: 48%;
     left: 31%;
-    
-
+}
+@media screen and (max-width: 1290px) {
+    .Large-Image {
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width: 980px) {
+    .Shop-Name {
+        padding-right: 20px;
+    }
+    .Nav-Links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-basis: 530px;
+        padding-top: 5px;
+    }
+    .All-Links {
+        height: auto;
+    }
+    .Nav-Links a {
+        height: 25px;
+    }
+}
+@media screen and (max-width: 720px) {
+    .Main-Content {
+        /* display: flex;
+        padding-top: 32px;
+        justify-content: space-between; */
+        flex-direction: column;
+    }
 }

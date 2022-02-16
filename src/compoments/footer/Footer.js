@@ -41,8 +41,8 @@ const Footer = () => {
                         <div>Categories</div>
                         <div><Link to='/women' data-test-id='footer-nav-link-women'><span>Woman</span></Link></div>
                         <div><Link to='/men' data-test-id='footer-nav-link-men'><span>Men</span></Link></div>
-                        <div><Link to='/'><span>Accessories</span></Link></div>
-                        <div><Link to='/'><span>Beauty</span></Link></div>
+                        <div><span>Accessories</span></div>
+                        <div><span>Beauty</span></div>
                     </div>
                     <div className='Footer-links-quiz Footer-links-flex'>
                         <div>Infomation</div>

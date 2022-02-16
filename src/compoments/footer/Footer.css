@@ -143,3 +143,10 @@
     color: #121212;
     opacity: 0.8;
 }
+@media screen and (max-width: 720px) {
+    .Footer-line-input {
+        
+        width: auto;
+        
+    }
+}

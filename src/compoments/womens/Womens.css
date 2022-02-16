@@ -136,3 +136,8 @@
     color: #121212;
     opacity: 0.8;
 }
+@media screen and (max-width: 620px) {
+    .Womens-Links {
+        flex-direction: column;
+    }
+}

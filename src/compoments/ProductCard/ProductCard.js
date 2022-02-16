@@ -1,7 +1,14 @@
-const ProductCard = () => {
+import {Link} from 'react-router-dom';
+
+import women1 from './img/women1.png';
+
+import fullStar from './img/fullStar.svg';
+import emptyStar from './img/emptyStar.svg';
+
+const ProductCard = (props) => {
     return (
         <div className='Womens-Card'>
-            <Link to='/cart' data-test-id='clothes-card-women'>
+            <Link to={`/cart/${props.id}`} data-test-id='clothes-card-women'>
                 <div className='Womens-Card-Image' style={{background:`url(${women1}) no-repeat center center`}}></div>
                 <div className='Womens-Card-Descr'>
                     <div className='Womens-Card-Name'>

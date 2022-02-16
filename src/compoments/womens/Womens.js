@@ -49,139 +49,157 @@ const Womens = () => {
                         </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women2}) no-repeat center center`}}>
-                            <div className='Womens-Card-Discount'>
-                                <span className='Womens-Card-DiscountText'>-50%</span>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women2}) no-repeat center center`}}>
+                                <div className='Womens-Card-Discount'>
+                                    <span className='Womens-Card-DiscountText'>-50%</span>
+                                </div>
                             </div>
-                        </div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                    <span className='Womens-Card-Price-Disc'>$ 60.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
                             </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
-                                <span className='Womens-Card-Price-Disc'>$ 60.00</span>
-                            </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women3}) no-repeat center center`}}>
-                        </div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women3}) no-repeat center center`}}>
                             </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
                             </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women4}) no-repeat center center`}}>
-                        </div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women4}) no-repeat center center`}}>
                             </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
                             </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='Womens-Card'><div className='Womens-Card-Image' style={{background:`url(${women5}) no-repeat center center`}}></div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
-                            </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
-                            </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women6}) no-repeat center center`}}>
-                        </div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women5}) no-repeat center center`}}>
                             </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
                             </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women7}) no-repeat center center`}}>
-                        </div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women6}) no-repeat center center`}}>
                             </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
                             </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women8}) no-repeat center center`}}></div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women7}) no-repeat center center`}}>
                             </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
                             </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
+                        </Link>
+                    </div>
+                    <div className='Womens-Card'>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women8}) no-repeat center center`}}>
                             </div>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
+                            </div>
+                        </Link>
                         </div>
-                    </div></div>
+                    </div>
                 </div>
                 <div className='Womens-See-All'>
                     <span>See All</span>
