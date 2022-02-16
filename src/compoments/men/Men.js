@@ -11,7 +11,7 @@ import emptyStar from './img/emptyStar.svg';
 
 const Men = () => {
     return (
-        <section className='Womens'>
+        <section className='Womens' data-test-id='clothes-men'>
             <div className='Main-Info'>
                 <div className='Womens-Header'>
                     <div className='Womens-Name'>

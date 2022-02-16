@@ -18,7 +18,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <section className='Footer'>
+        <section className='Footer' data-test-id='footer'>
             <div className='Footer-line'>
                 <div className='Main-Info'>
                     <div className='Footer-line-content'>
@@ -39,8 +39,8 @@ const Footer = () => {
                 <div className='Footer-links'>
                     <div className='Footer-links-categories Footer-links-flex'>
                         <div>Categories</div>
-                        <div><Link to='/women'><span>Woman</span></Link></div>
-                        <div><Link to='/men'><span>Men</span></Link></div>
+                        <div><Link to='/women' data-test-id='footer-nav-link-women'><span>Woman</span></Link></div>
+                        <div><Link to='/men' data-test-id='footer-nav-link-men'><span>Men</span></Link></div>
                         <div><Link to='/'><span>Accessories</span></Link></div>
                         <div><Link to='/'><span>Beauty</span></Link></div>
                     </div>

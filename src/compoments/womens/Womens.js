@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import women1 from './img/women1.png';
 import women2 from './img/women2.png';
 import women3 from './img/women3.png';
@@ -12,7 +13,7 @@ import './Womens.css';
 
 const Womens = () => {
     return (
-        <section className='Womens'>
+        <section className='Womens' data-test-id='clothes-women'>
             <div className='Main-Info'>
                 <div className='Womens-Header'>
                     <div className='Womens-Name'>
@@ -28,22 +29,24 @@ const Womens = () => {
                 </div>
                 <div className='Womens-AllCards'>
                     <div className='Womens-Card'>
-                        <div className='Womens-Card-Image' style={{background:`url(${women1}) no-repeat center center`}}></div>
-                        <div className='Womens-Card-Descr'>
-                            <div className='Womens-Card-Name'>
-                                <span>Women's tracksuit Q109</span>
+                        <Link to='/cart' data-test-id='clothes-card-women'>
+                            <div className='Womens-Card-Image' style={{background:`url(${women1}) no-repeat center center`}}></div>
+                            <div className='Womens-Card-Descr'>
+                                <div className='Womens-Card-Name'>
+                                    <span>Women's tracksuit Q109</span>
+                                </div>
+                                <div className='Womens-Card-Price'>
+                                    <span>$ 30.00</span>
+                                </div>
+                                <div className='Women-Card-Stars'>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={fullStar} alt='star' /></div>
+                                    <div><img src={emptyStar} alt='estar' /></div>
+                                </div>
                             </div>
-                            <div className='Womens-Card-Price'>
-                                <span>$ 30.00</span>
-                            </div>
-                            <div className='Women-Card-Stars'>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={fullStar} alt='star' /></div>
-                                <div><img src={emptyStar} alt='estar' /></div>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className='Womens-Card'>
                         <div className='Womens-Card-Image' style={{background:`url(${women2}) no-repeat center center`}}>

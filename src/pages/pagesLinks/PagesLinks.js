@@ -15,7 +15,7 @@ import "@fontsource/playfair-display-sc";
 
 const PagesLinks = () => {
     return(
-        <section className='Navigation'>
+        <section className='Navigation' data-test-id='header'>
             <div className='SocialAndContact'>
                 <div className='Main-Info'>
                     <div className='Contacts'>
@@ -40,18 +40,18 @@ const PagesLinks = () => {
             <div className='All-Links'>
                 <div className='Main-Info Header'>
                     <div className='Shop-Name'>
-                        <Link to='/'>
+                        <Link to='/' data-test-id='header-logo-link'>
                             <span>CleverShop</span>
                         </Link>
                     </div>
-                    <div className='Nav-Links'>
-                        <Link to='/'><span>About Us</span></Link>
-                        <Link to='/women'><span>Women</span></Link>
-                        <Link to='/men'><span>Men</span></Link>
-                        <Link to='/cart'><span>Beauty</span></Link>
-                        <Link to='/'><span>Accessories</span></Link>
-                        <Link to='/'><span>Blog</span></Link>
-                        <Link to='/'><span>Contact</span></Link>
+                    <div className='Nav-Links' data-test-id='menu'>
+                        <Link><span>About Us</span></Link>
+                        <Link to='/women' data-test-id='menu-link-women'><span>Women</span></Link>
+                        <Link to='/men' data-test-id='menu-link-men'><span>Men</span></Link>
+                        <Link to='/cart' ><span>Beauty</span></Link>
+                        <Link><span>Accessories</span></Link>
+                        <Link><span>Blog</span></Link>
+                        <Link><span>Contact</span></Link>
                     </div>
                     <div className='Search-Bar'>
                         <div><img src={Search} alt='search'/></div>

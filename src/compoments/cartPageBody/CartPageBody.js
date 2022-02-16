@@ -22,7 +22,7 @@ import './CartPageBody.css';
 
 const CartPageBody = () => {
     return (
-        <section className='Cart-page-body'>
+        <section className='Cart-page-body' data-test-id='product-page-women'>
             <div className='Main-Info'>
                 <div className='Cart-page-body-content'>
                     <div className='Cart-Vertical-gallery'>
