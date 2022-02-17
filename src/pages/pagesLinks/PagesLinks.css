@@ -7,8 +7,9 @@
     background: #121212;
 }
 .Main-Info {
-    max-width: 85%;
+    width: 85%;
     margin: 0 auto;
+    max-width: 1130px;
     
 }
 .Contacts {
@@ -106,5 +107,20 @@
     /* height: 100%; */
     margin: 0 auto;
 
+}
+.message{
+    font-family: Spartan;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 22px;
+/* or 157% */
+
+
+/* dark */
+
+color: #121212;
+
+opacity: 0.8;
 }
 

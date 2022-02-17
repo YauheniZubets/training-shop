@@ -1,6 +1,7 @@
 .Main-Info-Borders {
-    max-width: 85%;
+    width: 85%;
     margin: 0 auto;
+    max-width: 1130px;
 }
 .Main-Content {
     display: flex;
@@ -157,9 +158,6 @@
 }
 @media screen and (max-width: 720px) {
     .Main-Content {
-        /* display: flex;
-        padding-top: 32px;
-        justify-content: space-between; */
         flex-direction: column;
     }
 }

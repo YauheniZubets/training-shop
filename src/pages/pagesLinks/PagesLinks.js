@@ -53,6 +53,7 @@ const PagesLinks = () => {
                         <Link to='/'><span>Blog</span></Link>
                         <Link to='/'><span>Contact</span></Link>
                     </div>
+                   
                     <div className='Search-Bar'>
                         <div><img src={Search} alt='search'/></div>
                         <div><img src={World} alt='world'/></div>
@@ -62,8 +63,10 @@ const PagesLinks = () => {
                         <div><img src={Cart} alt='cart' /></div>
                         <div><span>2</span></div>
                     </div>
+                   
                 </div>
             </div>
+            <div className='message'><span>!!!Сообщение для ментора: очень не успеваю сделать красивый адаптив к дедлайну. Пропустите меня на след спринт, пожалуйста, я в ближайшие пару дней все сделаю красиво. Спасибо)</span></div>
         </section>
     )
 }
