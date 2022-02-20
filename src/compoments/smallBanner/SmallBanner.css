@@ -4,10 +4,9 @@
 .Small_Banner-disp {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .Small_Banner-disp>div {
-    flex-basis: 540px;
+    flex-basis: 48%;
     height: 260px;
 }
 .Small_Banner-Image {
@@ -52,4 +51,19 @@
 .Red-Text {
     color: red;
     opacity: 0.6;
+}
+@media screen and (max-width: 650px) {
+    .Small_Banner-disp {
+        flex-direction: column;
+    }
+    .Small_Banner-disp>div {
+        flex-basis: auto;
+        padding-bottom: 10px;
+    }
+    .Small-Banner {
+        padding-top: 40px;
+    }
+    .Banner-Center {
+        right: 18%;
+    }
 }

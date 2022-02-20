@@ -44,10 +44,10 @@ const CartPageBody = () => {
                     <div className='Cart-Vertical-gallery'>
                         <div className='Arrows'>
                             <div className="Arrow">
-                                <img className="Arrow-center" src={ArrowTop} alt='leftaroow' />
+                                <img className="Arrow-center Arrow-gal-left" src={ArrowTop} alt='leftaroow' />
                             </div>
                             <div className="Arrow">
-                                <img className="Arrow-center" src={ArrowBot} alt='rightaroow' />
+                                <img className="Arrow-center Arrow-gal-right" src={ArrowBot} alt='rightaroow' />
                             </div>
                         </div>
                         <div style={{background:`url(${vert1}) no-repeat center center`}}></div>
@@ -199,10 +199,10 @@ const CartPageBody = () => {
                     <div className='Cart-page-body-footer-name'>
                         <div><span>RELATED PRODUCTS</span></div>
                         <div className='Cart-page-body-footer-arrows'>
-                            <div className="Arrow">
+                            <div className="Arrow ">
                                 <img className="Arrow-center" src={LeftArrow} alt='leftaroow' />
                             </div>
-                            <div className="Arrow">
+                            <div className="Arrow ">
                                 <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
                             </div>
                         </div>

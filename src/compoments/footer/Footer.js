@@ -39,10 +39,10 @@ const Footer = () => {
                 <div className='Footer-links'>
                     <div className='Footer-links-categories Footer-links-flex'>
                         <div>Categories</div>
-                        <div><Link to='/women' data-test-id='footer-nav-link-women'><span>Woman</span></Link></div>
-                        <div><Link to='/men' data-test-id='footer-nav-link-men'><span>Men</span></Link></div>
-                        <div><span>Accessories</span></div>
-                        <div><span>Beauty</span></div>
+                        <div><Link to='/women' data-test-id='footer-nav-link-women'>Woman</Link></div>
+                        <div><Link to='/men' data-test-id='footer-nav-link-men'>Men</Link></div>
+                        <div>Accessories</div>
+                        <div>Beauty</div>
                     </div>
                     <div className='Footer-links-quiz Footer-links-flex'>
                         <div>Infomation</div>

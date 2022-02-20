@@ -32,7 +32,7 @@ const Blog = () => {
                         <div className='Blog-text'>
                             <div><span>Recent Favorites On Repeat</span></div>
                             <div>
-                            But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor
+                                But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor
                             </div>
                         </div>
                     </div>

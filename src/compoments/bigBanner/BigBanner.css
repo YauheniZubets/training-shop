@@ -6,7 +6,6 @@
     position: relative;
     margin: 0 auto;
     max-width: 1130px;
-    
 }
 .Big-Banner-size-top {
     top: 11%;
@@ -93,4 +92,26 @@
     z-index: 3;
     top: 9%;
     right: 0%;
+}
+@media screen and (max-width: 720px) {
+    .Big-Banner-input {
+        width: 60%; 
+    }
+    .Big-Banner-button {
+        width: 60%; 
+    }
+    .Big-Banner-text {
+        font-size: 21px;
+    }
+    .Big-Banner-section {
+        padding-top: 40px;
+    }
+}
+@media screen and (max-width: 470px) {
+    .Big-Banner-text {
+        font-size: 16px;
+    }
+    .Big-Banner-size>span:first-child {
+        font-size: 10px;
+    }
 }

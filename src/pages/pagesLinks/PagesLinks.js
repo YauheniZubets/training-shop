@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 import PhoneLogo from './PhoneLogo.svg';
 import MapPoint from './map.svg';
 import ClockLogo from './ClockLogo.svg';
@@ -14,6 +16,17 @@ import "@fontsource/spartan";
 import "@fontsource/playfair-display-sc";
 
 const PagesLinks = () => {
+
+    const [isMenuOpen, toogleMenu] = useState(false);
+
+    function onClickCross () {
+        toogleMenuMode();
+    }
+
+    function toogleMenuMode() {
+        toogleMenu(!isMenuOpen);
+    }
+
     return(
         <section className='Navigation' data-test-id='header'>
             <div className='SocialAndContact'>
@@ -28,7 +41,7 @@ const PagesLinks = () => {
                                 <img src={MapPoint} alt='map'></img>
                                 <span className='NaviInfo'>Belarus, Gomel, Lange 17</span>
                             </div>
-                            <div>
+                            <div className='Clock'>
                                 <img src={ClockLogo} alt='clock'></img>
                                 <span className='NaviInfo'>All week 24/7</span>
                             </div>
@@ -57,16 +70,21 @@ const PagesLinks = () => {
                     <div className='Search-Bar'>
                         <div><img src={Search} alt='search'/></div>
                         <div><img src={World} alt='world'/></div>
-                        <div>
-                            <img src={Login} alt='login' />
+                        <div><img src={Login} alt='login' /></div>
+                        <div className='Search-Bar-Cart'><img src={Cart} alt='cart' />
+                            <div className='Search-Bar-Numb'><span>2</span></div>
                         </div>
-                        <div><img src={Cart} alt='cart' /></div>
-                        <div><span>2</span></div>
+                        <div>
+                            <div className={classNames('Burger', {visible: isMenuOpen})} onClick = {onClickCross}>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
                     </div>
                    
                 </div>
             </div>
-            <div className='message'><span>!!!Сообщение для ментора: очень не успеваю сделать красивый адаптив к дедлайну. Пропустите меня на след спринт, пожалуйста, я в ближайшие пару дней все сделаю красиво. Спасибо)</span></div>
         </section>
     )
 }

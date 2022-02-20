@@ -36,6 +36,9 @@
 .Social > img {
     padding-right: 12px;
 }
+.Social > img:last-child {
+    padding-right: 0;
+}
 .All-Links {
     height: 66px;
 }
@@ -83,19 +86,12 @@
     flex-direction: row;
     justify-content: space-between;
     flex-basis: 170px;
-    margin-right: -25px;
     padding-top: 5px;
 }
-.Search-Bar>div:last-child {
+.Search-Bar-Cart {
     position: relative;
-    left: -30px;
-    top: -6px;
-    border-radius: 50%;
-    background-color: black;
-    height: 16px;
-    width: 16px;
 }
-.Search-Bar>div:last-child>span {
+.Search-Bar-Numb>span {
     font-family: Spartan;
     font-style: normal;
     font-weight: bold;
@@ -103,24 +99,116 @@
     line-height: 18px;
     color: #FFFFFF;
     display:block;
-    /* width:100%; */
-    /* height: 100%; */
     margin: 0 auto;
-
+}
+.Search-Bar-Numb {
+    position: absolute;
+    left: 10px;
+    top: -6px;
+    border-radius: 50%;
+    background-color: black;
+    height: 16px;
+    width: 16px;
+    text-align: center;
+}
+.Burger {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    /* margin: 30px auto; */
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+.Burger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #121212;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.Burger span:nth-child(1) {
+    top: 0px;
+    transform-origin: left center;
+}
+.Burger span:nth-child(2) {
+    top: 8px;
+    transform-origin: left center;
+}
+.Burger span:nth-child(3) {
+    top: 16px;
+    transform-origin: left center;
+}
+.visible span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 2px;
+    left: 0px;
+}
+.visible span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+.visible span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 16px;
+    left: 0px;
 }
 .message{
     font-family: Spartan;
-font-style: normal;
-font-weight: normal;
-font-size: 8px;
-line-height: 22px;
-/* or 157% */
-
-
-/* dark */
-
-color: #121212;
-
-opacity: 0.8;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.8;
 }
-
+@media screen and (max-width: 1100px) {
+    .Left-Cont {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 960px) {
+    .Left-Cont {
+        width: 65%;
+    }
+}
+@media screen and (max-width: 750px) {
+    .Left-Cont {
+        width: 75%;
+    }
+}
+@media screen and (max-width: 720px) {
+    
+    .Nav-Links {
+        flex-basis: 159px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .NaviInfo {
+        font-size: 10px;
+        padding-left: 5px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .Left-Cont {
+        flex-direction: column;
+        text-align: left;
+    }
+    .Social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Shop-Name {
+        padding-right: 0;
+    }
+    .Nav-Links {
+        /* flex-basis: 530px; */
+        flex-shrink: 3;
+    }
+}

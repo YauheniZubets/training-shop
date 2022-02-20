@@ -126,3 +126,42 @@
     color: #121212;
     padding-right: 24px;
 }
+@media screen and (max-width: 1150px) {
+    .Cart-Page-Banner-name {
+        padding-top: 2%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .Cart-Page-Banner-name>span {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .Cart-Page-Banner-name>span {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .Cart-Page-Banner-name>span {
+        font-size: 14px;
+    }
+    .Cart-Page-Banner-Top>div>span:first-child {
+        font-size: 9px;
+    }
+    .Cart-Page-Banner-Top>div>span:nth-child(3) {
+        font-size: 9px;
+    }
+    .Cart-Page-Banner-Top>div>span:last-child {
+        font-size: 9px;
+    }
+    .Cart-Page-Banner-bord-footer-content-bot>span:nth-child(even) {
+        font-size: 9px;
+        padding-right: 10px;
+    }
+    .Cart-Page-Banner-bord-footer-content-bot>span:nth-child(odd) {
+        font-size: 9px;
+    }
+    .Cart-Page-Banner-bord-footer-span {
+        font-size: 9px;
+    }
+}

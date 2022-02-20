@@ -10,7 +10,7 @@
     
 }
 .Support-Info>div {
-    flex-basis: 350px;
+    flex-basis: 33%;
 }
 .Support-Info-Image {
     float: left;
@@ -36,4 +36,44 @@
     color: #121212;
     opacity: 0.9;
     float: left;
+}
+@media screen and (max-width: 1220px) {
+    .Support-Descr {
+        width: 68%;
+        text-align: left;
+        height: 70px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .Support-Name span {
+        font-size: 10px;
+    }
+    .Support-Descr {
+        font-size: 10px;
+    }
+    .Support-Info-Image>img {
+        width: 14px;
+    }
+}
+@media screen and (max-width: 470px) {
+    .Support-Name span {
+        font-size: 8px;
+    }
+    .Support-Descr {
+        font-size: 8px;
+    }
+    .Support-Info-Image>img {
+        width: 12px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .Support-Name span {
+        font-size: 7px;
+    }
+    .Support-Descr {
+        font-size: 7px;
+    }
+    .Support-Info-Image>img {
+        width: 10px;
+    }
 }
