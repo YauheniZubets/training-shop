@@ -132,18 +132,11 @@
     left: 31%;
 }
 @media screen and (max-width: 1290px) {
-    .Large-Image {
-        padding-right: 20px;
-    }
+    /* .Large-Image {
+        /* padding-right: 20px; */
+    /* } */ 
 }
 @media screen and (max-width: 980px) {
-    .Nav-Links {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex-basis: 530px;
-        padding-top: 5px;
-    }
     .All-Links {
         height: auto;
     }
@@ -171,4 +164,22 @@
     .MenWomanBanner {
         padding-bottom: 25px;
     }
+    .swiper {
+        margin: 0;
+    }
+}
+.swiper-button-next:after  {
+    content: url('./img/rightArrow.svg');
+    line-height: 0;
+}
+.swiper-button-prev:after  {
+    content: url('./img/leftArrow.svg');
+    line-height: 0;
+}
+.swiper-button-next, .swiper-button-prev{
+    background: #FFFFFF;
+    opacity: 0.6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }

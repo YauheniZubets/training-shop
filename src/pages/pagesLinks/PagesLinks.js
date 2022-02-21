@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+
 import PhoneLogo from './PhoneLogo.svg';
 import MapPoint from './map.svg';
 import ClockLogo from './ClockLogo.svg';
@@ -19,8 +21,17 @@ const PagesLinks = () => {
 
     const [isMenuOpen, toogleMenu] = useState(false);
 
+    useEffect(()=>{
+        isMenuOpen ? disablePageScroll(document.body) : enablePageScroll(document.body);
+    })
+
     function onClickCross () {
         toogleMenuMode();
+    }
+
+    const onClickNav = (ev) =>  {
+        const target = ev.target;
+        if (isMenuOpen && !target.closest('Mobile-Menu')) toogleMenu(!isMenuOpen);
     }
 
     function toogleMenuMode() {
@@ -28,7 +39,7 @@ const PagesLinks = () => {
     }
 
     return(
-        <section className='Navigation' data-test-id='header'>
+        <section className='Navigation' data-test-id='header' onClick={onClickNav}>
             <div className='SocialAndContact'>
                 <div className='Main-Info'>
                     <div className='Contacts'>
@@ -66,7 +77,6 @@ const PagesLinks = () => {
                         <Link to='/'><span>Blog</span></Link>
                         <Link to='/'><span>Contact</span></Link>
                     </div>
-                   
                     <div className='Search-Bar'>
                         <div><img src={Search} alt='search'/></div>
                         <div><img src={World} alt='world'/></div>
@@ -74,15 +84,24 @@ const PagesLinks = () => {
                         <div className='Search-Bar-Cart'><img src={Cart} alt='cart' />
                             <div className='Search-Bar-Numb'><span>2</span></div>
                         </div>
-                        <div>
-                            <div className={classNames('Burger', {visible: isMenuOpen})} onClick = {onClickCross}>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+                        <div className={classNames('Burger', {visible: isMenuOpen})} onClick = {onClickCross}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
-                   
+                    <div className={classNames('Mobile-Menu', {[`Mobile-Menu-Visible`]: isMenuOpen})} onClick={onClickCross}>
+                        <div className='Nav-Links-Mobile'>
+                            <Link to='/'><span>About Us</span></Link>
+                            <Link to='/women' data-test-id='menu-link-women'><span>Women</span></Link>
+                            <Link to='/men' data-test-id='menu-link-men'><span>Men</span></Link>
+                            <Link to='/'><span>Beauty</span></Link>
+                            <Link to='/'><span>Accessories</span></Link>
+                            <Link to='/'><span>Blog</span></Link>
+                            <Link to='/'><span>Contact</span></Link>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </section>

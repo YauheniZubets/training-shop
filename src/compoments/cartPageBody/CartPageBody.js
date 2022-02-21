@@ -1,3 +1,9 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
 import ArrowTop from './img/arrowtop.svg';
 import ArrowBot from './img/arrowbottom.svg';
 import LeftArrow from './img/leftArrow.svg';
@@ -55,7 +61,15 @@ const CartPageBody = () => {
                         <div style={{background:`url(${vert3}) no-repeat center center`}}></div>
                         <div style={{background:`url(${vert4}) no-repeat center center`}}></div>
                     </div>
-                    <div className='Cart-main-photo' 
+                    <Swiper navigation={true} modules={[Navigation]} className="mySwiper Cart-main-photo">
+                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
+                        </SwiperSlide>
+                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
+                        </SwiperSlide>
+                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
+                        </SwiperSlide>
+                    </Swiper>
+                    {/* <div className='Cart-main-photo' 
                         style={{background:`url(${Cartmain}) no-repeat center center`}}
                     >
                         <div className="Arrow Arrow-Left">
@@ -64,7 +78,7 @@ const CartPageBody = () => {
                         <div className="Arrow Arrow-Right">
                             <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
                         </div>
-                    </div>
+                    </div> */}
                     <div className='Cart-descr'>
                         <div className='Cart-color'>
                             <span>Color: </span><span>Blue</span>
