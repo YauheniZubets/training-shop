@@ -49,7 +49,7 @@
 .Cart-descr {
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
+    flex-basis: 46%;
 }
 .Cart-color {
     text-align: left;
