@@ -160,13 +160,14 @@
     .Large-Image {
         flex-basis: auto;
         padding-bottom: 30px;
+        width: 100%;
     }
     .MenWomanBanner {
         padding-bottom: 25px;
     }
-    .swiper {
+    /* .swiper {
         margin: 0;
-    }
+    } */
 }
 .swiper-button-next:after  {
     content: url('./img/rightArrow.svg');

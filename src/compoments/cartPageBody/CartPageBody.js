@@ -1,17 +1,22 @@
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, FreeMode, Thumbs} from "swiper";
+import { Link } from 'react-router-dom';
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
+// import "swiper/css/pagination";
 
 import ArrowTop from './img/arrowtop.svg';
 import ArrowBot from './img/arrowbottom.svg';
-import LeftArrow from './img/leftArrow.svg';
-import RightArrow from './img/rightArrow.svg';
+// import LeftArrow from './img/leftArrow.svg';
+// import RightArrow from './img/rightArrow.svg';
 import vert1 from './img/vert1.png';
-import vert2 from './img/vert2.png';
-import vert3 from './img/vert3.png';
-import vert4 from './img/vert4.png';
+// import vert2 from './img/vert2.png';
+// import vert3 from './img/vert3.png';
+// import vert4 from './img/vert4.png';
 import Cartmain from './img/cartMain.png';
 import color1 from './img/colors1.png';
 import color2 from './img/colors2.png';
@@ -38,16 +43,74 @@ import fotWomen2 from './img/fotwomen2.png';
 import fotWomen3 from './img/fotwomen3.png';
 import fotWomen4 from './img/fotwomen4.png';
 
-import { Link } from 'react-router-dom';
-
 import './CartPageBody.css';
 
 const CartPageBody = () => {
+
+    // const [firstSwiper, setFirstSwiper] = useState(null);
+    // const [secondSwiper, setSecondSwiper] = useState(null);
+
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    useEffect(()=> {
+        console.log(thumbsSwiper)
+    })
     return (
+        
         <section className='Cart-page-body' data-test-id='product-page-women'>
             <div className='Main-Info'>
                 <div className='Cart-page-body-content'>
-                    <div className='Cart-Vertical-gallery'>
+                    <div className="Cart-Vertical-gallery">
+                        <div className='Arrows'>
+                            <div className="Arrow">
+                                <img className="Arrow-center Arrow-gal-left" src={ArrowTop} alt='leftaroow' />
+                            </div>
+                            <div className="Arrow">
+                                <img className="Arrow-center Arrow-gal-right" src={ArrowBot} alt='rightaroow' />
+                            </div>
+                        </div>
+                        <Swiper 
+                            // navigation={true} 
+                            onSwiper={setThumbsSwiper}
+                            spaceBetween={80}
+                            slidesPerView={4}
+                            freeMode={true}
+                            watchSlidesProgress={true}
+                            modules={[FreeMode, Navigation, Thumbs]} 
+                            direction={'vertical'}
+                            navigation={{
+                                nextEl: '.Arrow-gal-right',
+                                prevEl: '.Arrow-gal-left',
+                                disabledClass: 'opacity-nav'
+                            }}
+                            className="mySwiper"
+                            data-test-id = 'product-slider'
+                            breakpoints={{
+                                761: {
+                                    direction:'vertical'
+                                },
+                                300: {
+                                    direction:'horizontal'
+                                }
+                            }} 
+                        >
+                            <SwiperSlide>
+                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
+                    {/* <div className='Cart-Vertical-gallery'>
                         <div className='Arrows'>
                             <div className="Arrow">
                                 <img className="Arrow-center Arrow-gal-left" src={ArrowTop} alt='leftaroow' />
@@ -60,8 +123,21 @@ const CartPageBody = () => {
                         <div style={{background:`url(${vert2}) no-repeat center center`}}></div>
                         <div style={{background:`url(${vert3}) no-repeat center center`}}></div>
                         <div style={{background:`url(${vert4}) no-repeat center center`}}></div>
-                    </div>
-                    <Swiper navigation={true} modules={[Navigation]} className="mySwiper Cart-main-photo">
+                    </div> */}
+                    <Swiper 
+                        navigation={true} 
+                        modules={[Navigation, FreeMode, Thumbs]}
+                        thumbs={{ swiper: thumbsSwiper,
+                            thumbsContainerClass: 'opacity-swiper',
+                            slideThumbActiveClass: 'opacity-active',
+                         }}
+                        className="mySwiper Cart-main-photo"
+                        data-test-id = 'product-slider'
+                    >
+                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
+                        </SwiperSlide>
+                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
+                        </SwiperSlide>
                         <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
                         </SwiperSlide>
                         <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
@@ -210,18 +286,137 @@ const CartPageBody = () => {
                     </div>
                 </div>
                 <div className='Cart-page-body-footer'>
-                    <div className='Cart-page-body-footer-name'>
-                        <div><span>RELATED PRODUCTS</span></div>
-                        <div className='Cart-page-body-footer-arrows'>
-                            <div className="Arrow ">
-                                <img className="Arrow-center" src={LeftArrow} alt='leftaroow' />
-                            </div>
-                            <div className="Arrow ">
-                                <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
-                            </div>
+                    <Swiper
+                        slidesPerView={4}
+                        spaceBetween={30}
+                        slidesPerGroup={1}
+                        loop={true}
+                        loopFillGroupWithBlank={true}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Navigation]}
+                        className="mySwiper Cart-page-body-footer-cards"
+                        breakpoints={{
+                            // when window width is >= 640px
+                            300: {
+                            slidesPerView: 1,
+                            },
+                            570: {
+                            slidesPerView: 1,
+                            },
+                            600: {
+                            slidesPerView: 2,
+                            },
+                            870: {
+                            slidesPerView: 3,
+                            },
+                            1100: {
+                            slidesPerView: 3,
+                            },
+                            1300: {
+                            slidesPerView: 4,
+                            },
+                        }}
+                        data-test-id = 'related-slider'
+                    >
+                        <div className='Cart-page-body-footer-name'>
+                            <div><span>RELATED PRODUCTS</span></div>
+                            {/* <div className='Cart-page-body-footer-arrows'>
+                                <div className="Arrow">
+                                    <img className="Arrow-center" src={LeftArrow} alt='leftaroow' />
+                                </div>
+                                <div className="Arrow">
+                                    <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
+                                </div>
+                            </div> */}
                         </div>
-                    </div>
-                    <div className='Cart-page-body-footer-cards'>
+                        <SwiperSlide>
+                            <Link to='/cart/women/1' data-test-id='clothes-card-women'>
+                                <div className='Womens-Card-Image' style={{background:`url(${fotWomen1}) no-repeat center center`}}></div>
+                                <div className='Womens-Card-Descr'>
+                                    <div className='Womens-Card-Name'>
+                                        <span>Women's tracksuit Q109</span>
+                                    </div>
+                                    <div className="Womens-Card-Price-stars">
+                                        <div className='Womens-Card-Price'>
+                                            <span>$ 30.00</span>
+                                        </div>
+                                        <div className='Women-Card-Stars'>
+                                            <div><img src={fullStar} alt='star' /></div>
+                                            <div><img src={fullStar} alt='star' /></div>
+                                            <div><img src={fullStar} alt='star' /></div>
+                                            <div><img src={fullStar} alt='star' /></div>
+                                            <div><img src={emptyStar} alt='estar' /></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to='/cart/women/1' data-test-id='clothes-card-women'>
+                                <div className='Womens-Card-Image' style={{background:`url(${fotWomen2}) no-repeat center center`}}></div>
+                                <div className='Womens-Card-Descr'>
+                                    <div className='Womens-Card-Name'>
+                                        <span>Women's tracksuit Q109</span>
+                                    </div>
+                                    <div className='Womens-Card-Price'>
+                                        <span>$ 30.00</span>
+                                    </div>
+                                    <div className='Women-Card-Stars'>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={emptyStar} alt='estar' /></div>
+                                    </div>
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to='/cart/women/1' data-test-id='clothes-card-women'>
+                                <div className='Womens-Card-Image' style={{background:`url(${fotWomen3}) no-repeat center center`}}></div>
+                                <div className='Womens-Card-Descr'>
+                                    <div className='Womens-Card-Name'>
+                                        <span>Women's tracksuit Q109</span>
+                                    </div>
+                                    <div className='Womens-Card-Price'>
+                                        <span>$ 30.00</span>
+                                    </div>
+                                    <div className='Women-Card-Stars'>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={emptyStar} alt='estar' /></div>
+                                    </div>
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to='/cart/women/1' data-test-id='clothes-card-women'>
+                                <div className='Womens-Card-Image' style={{background:`url(${fotWomen4}) no-repeat center center`}}></div>
+                                <div className='Womens-Card-Descr'>
+                                    <div className='Womens-Card-Name'>
+                                        <span>Women's tracksuit Q109</span>
+                                    </div>
+                                    <div className='Womens-Card-Price'>
+                                        <span>$ 30.00</span>
+                                    </div>
+                                    <div className='Women-Card-Stars'>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={fullStar} alt='star' /></div>
+                                        <div><img src={emptyStar} alt='estar' /></div>
+                                    </div>
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                    </Swiper>
+                    {/* <div className='Cart-page-body-footer-cards'>
                         <Link to='/cart/women/1' data-test-id='clothes-card-women'>
                             <div className='Womens-Card-Image' style={{background:`url(${fotWomen1}) no-repeat center center`}}></div>
                             <div className='Womens-Card-Descr'>
@@ -294,7 +489,7 @@ const CartPageBody = () => {
                                 </div>
                             </div>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

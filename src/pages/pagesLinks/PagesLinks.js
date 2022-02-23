@@ -39,7 +39,7 @@ const PagesLinks = () => {
     }
 
     return(
-        <section className='Navigation' data-test-id='header' onClick={onClickNav}>
+        <section className='Navigation' data-test-id='menu' onClick={onClickNav}>
             <div className='SocialAndContact'>
                 <div className='Main-Info'>
                     <div className='Contacts'>
@@ -84,13 +84,21 @@ const PagesLinks = () => {
                         <div className='Search-Bar-Cart'><img src={Cart} alt='cart' />
                             <div className='Search-Bar-Numb'><span>2</span></div>
                         </div>
-                        <div className={classNames('Burger', {visible: isMenuOpen})} onClick = {onClickCross}>
+                        <div 
+                            className={classNames('Burger', {visible: isMenuOpen})} 
+                            onClick = {onClickCross}
+                            data-test-id = 'burger-menu-btn'
+                        >
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
                     </div>
-                    <div className={classNames('Mobile-Menu', {[`Mobile-Menu-Visible`]: isMenuOpen})} onClick={onClickCross}>
+                    <div 
+                        className={classNames('Mobile-Menu', {[`Mobile-Menu-Visible`]: isMenuOpen})} 
+                        onClick={onClickCross}
+                        data-test-id = 'burger-menu'
+                    >
                         <div className='Nav-Links-Mobile'>
                             <Link to='/'><span>About Us</span></Link>
                             <Link to='/women' data-test-id='menu-link-women'><span>Women</span></Link>

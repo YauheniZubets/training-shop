@@ -8,8 +8,8 @@ import LargeImage from './img/large.png';
 import WomanBanner from './img/woman-banner.png';
 import MenBanner from './img/men-banner.png';
 import AccesBanner from './img/acces-banner.png';
-import LeftArrow from './img/leftArrow.svg';
-import RightArrow from './img/rightArrow.svg';
+// import LeftArrow from './img/leftArrow.svg';
+// import RightArrow from './img/rightArrow.svg';
 
 import './Header.css';
 
@@ -20,7 +20,12 @@ const Header = () => {
         <section className="Main-Page">
             <div className="Main-Info-Borders">
                 <div className="Main-Content">
-                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper Large-Image">
+                        <Swiper 
+                            navigation={true} 
+                            modules={[Navigation]} 
+                            className="mySwiper Large-Image"
+                            data-test-id = 'main-slider'
+                        >
                             <SwiperSlide style={{background:`url(${LargeImage}) no-repeat center center`}}>
                                 <div className="Banner Banner-Center Big-Banner">
                                     <span>Banner</span><br />
