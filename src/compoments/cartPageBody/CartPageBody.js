@@ -77,7 +77,7 @@ const CartPageBody = () => {
                             watchSlidesProgress={true}
                             modules={[FreeMode, Navigation, Thumbs]} 
                             direction={'vertical'}
-                            navigation={{
+                            navigation={true,{
                                 nextEl: '.Arrow-gal-right',
                                 prevEl: '.Arrow-gal-left',
                                 disabledClass: 'opacity-nav'
