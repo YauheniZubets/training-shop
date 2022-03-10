@@ -95,7 +95,7 @@ const WomenPageBanner = (props) => {
 
     const colorsFilter = colorsArr.map((item, index) => {
         return (
-            <div className='Filter-checkbox' key={index}>
+            <div className='Filter-checkbox' key={index} data-test-id={`filter-color-${item}`}>
                 <input type='checkbox' value={item} area='images'/>
                 <span>{item}</span>
             </div>
@@ -104,7 +104,7 @@ const WomenPageBanner = (props) => {
 
     const sizesFilter = sizesArr.map((item, index) => {
         return (
-            <div className='Filter-checkbox' key={index}>
+            <div className='Filter-checkbox' key={index} data-test-id={`filter-size-${item}`}>
                 <input type='checkbox' value={item} area='sizes'/>
                 <span>{item}</span>
             </div>
@@ -113,7 +113,7 @@ const WomenPageBanner = (props) => {
 
     const brandsFilter = brandsArr.map((item, index) => {
         return (
-            <div className='Filter-checkbox' key={index}>
+            <div className='Filter-checkbox' key={index} data-test-id={`filter-brand-${item}`}>
                 <input type='checkbox' value={item} area='brand'/>
                 <span>{item}</span>
             </div>
@@ -164,7 +164,7 @@ const WomenPageBanner = (props) => {
             <div className='Filter'>
                 <div className='Main-Info'>
                     <div className='Filter-content'>
-                        <div onClick={cbShowFilter}>
+                        <div onClick={cbShowFilter} data-test-id='filter-button'>
                             <img src={filter} alt='filter' />
                             <span>Filter</span>
                         </div>
@@ -177,18 +177,18 @@ const WomenPageBanner = (props) => {
             </div>
             {
                 showFilter &&
-                <div className='Filter-field'>
+                <div className='Filter-field' data-test-id={`filters-${props.gender}`}>
                     <div className='Main-Info'>
                         <div className='Filter-field-content' onChange={cbFilterChange}>
-                            <div className='Filter-field-content-colors Overflow-scroll'>
+                            <div className='Filter-field-content-colors Overflow-scroll' data-test-id='filters-color'>
                                 <div className='Filter-name'>COLOR</div>
                                 {colorsFilter}
                             </div>
-                            <div className='Filter-field-content-sizes Overflow-scroll'>
+                            <div className='Filter-field-content-sizes Overflow-scroll' data-test-id='filters-size'>
                                 <div className='Filter-name'>SIZES</div>
                                 {sizesFilter}
                             </div>
-                            <div className='Filter-field-content-brands Overflow-scroll'>
+                            <div className='Filter-field-content-brands Overflow-scroll' data-test-id='filters-brand'>
                                 <div className='Filter-name'>BRANDS</div>
                                 {brandsFilter}
                             </div>

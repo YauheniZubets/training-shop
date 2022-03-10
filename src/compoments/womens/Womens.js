@@ -118,7 +118,7 @@ class Womens extends React.PureComponent  {
                                 : `MEN'S`
                             }</span>
                         </div>
-                        <BlockMenu filterMenu = {this.props.filterMenu} />
+                        <BlockMenu filterMenu = {this.props.filterMenu} gender={this.props.gender} />
                     </div>
                 }
                 <div className='Womens-AllCards'>
