@@ -49,8 +49,8 @@ class Womens extends React.PureComponent  {
             })
         } else if (this.props.images.length || this.props.sizes.length || this.props.brand.length) {
             filteredCards = PRODUCTS[this.props.gender].filter((item, index) => {
-                
-                switch (this.props.area) {
+                return ()=>{
+                    switch (this.props.area) {
                     case 'images':
                         for (const i of item[this.props.area]) {
                             for (const j of this.props.images) {
@@ -79,6 +79,8 @@ class Womens extends React.PureComponent  {
                     default:
                         break;
                 }
+                }
+                
             })
             productCards = filteredCards.map((item, index) => {
                 return (

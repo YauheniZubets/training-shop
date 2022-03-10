@@ -20,7 +20,7 @@ const BlockMenu = (props) => {
                 <div key={index} >
                     <span 
                         particular-name={item.particularName} id={index} 
-                        className={menuOpacity==index ? 'No-opacity' : 'Opacity'} 
+                        className={menuOpacity===index ? 'No-opacity' : 'Opacity'} 
                         data-test-id={`clothes-${props.gender}-${item.particularName}`}
                     >
                         {item.name}
