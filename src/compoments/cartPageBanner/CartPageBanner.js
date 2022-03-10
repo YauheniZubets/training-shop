@@ -1,9 +1,11 @@
 import share from './img/share.svg';
 import fullStar from './img/fullStar.svg';
+import Stars from '../stars/stars';
 
 import './CartPageBanner.css';
 
-const CartPageBanner = () => {
+const CartPageBanner = (props) => {
+    console.log('props: ', props.product);
     return (
         <section className="Cart-Page-Banner">
             <div className='Cart-Page-Banner-bord'>
@@ -12,9 +14,9 @@ const CartPageBanner = () => {
                         <div>
                             <span>Home</span>
                             <span>►</span>
-                            <span>Women</span>
+                            <span>{props.product.category}</span>
                             <span>►</span>
-                            <span >Women's tracksuit Q109</span>
+                            <span >{props.product.name}</span>
                         </div>
                         <div>
                             <img src={share} alt='share' />
@@ -25,20 +27,17 @@ const CartPageBanner = () => {
             </div>
             <div className='Cart-Page-Banner-bord-bottom'>
                 <div className='Cart-Page-Banner-name'>
-                    <span>Women's tracksuit Q109</span>
+                    <span>{props.product.name}</span>
                 </div>
             </div>
             <div className='Cart-Page-Banner-bord-footer'>
                 <div className='Main-Info'>
                     <div className='Cart-Page-Banner-bord-footer-content'>
-                        <div className='Women-Card-Stars'>
-                            <div><img src={fullStar} alt='star' /></div>
-                            <div><img src={fullStar} alt='star' /></div>
-                            <div><img src={fullStar} alt='star' /></div>
-                            <div><img src={fullStar} alt='star' /></div>
-                            <div><img src={fullStar} alt='star' /></div>
-                            <span className='Cart-Page-Banner-bord-footer-span'>2 Reviews</span>
+                        <div>
+                            <Stars number={props.product.rating} />
+                            <span className='Cart-Page-Banner-bord-footer-span'>{props.product.reviews.length} Reviews</span>
                         </div>
+                        
                         <div className='Cart-Page-Banner-bord-footer-content-bot'>
                             <span>SKU:</span><span>777</span>
                             <span>Availability:</span><span>In Stock</span>

@@ -16,8 +16,8 @@ class Main extends React.PureComponent {
         <>
             <Header />
             <Support />
-            <Womens />
-            <Men />
+            <Womens showBlockMenu={true} gender='women' />
+            <Womens showBlockMenu={true} gender='men'/>
             <SmallBanner />
             <BigBanner />
             <Blog />

@@ -3,6 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, FreeMode, Thumbs} from "swiper";
 import { Link } from 'react-router-dom';
 
+import Stars from '../stars/stars';
+import SizesString from "../sizesString/SizesString";
+import Reviews from "../Reviews/Reviews";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
@@ -45,15 +49,59 @@ import fotWomen4 from './img/fotwomen4.png';
 
 import './CartPageBody.css';
 
-const CartPageBody = () => {
+const CartPageBody = (props) => {
 
-    // const [firstSwiper, setFirstSwiper] = useState(null);
-    // const [secondSwiper, setSecondSwiper] = useState(null);
+    const [thumbsSwiper, setThumbsSwiper] = useState(null); //for swiper
+    const [curColor, setCurColor] = useState(props.product.images[0].color);
+    const [curSize, setCurSize] = useState(props.product.sizes[0]);
+    console.log('props in cart: ', props);
 
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    useEffect(()=> {
-        console.log(thumbsSwiper)
+    const cbChangeColor = (ev) => {
+        const target = ev.target;
+        const val = target.alt;
+        curColor !== val && setCurColor(val);
+    }
+
+    const cbChangeSize = (ev) => {
+        const target = ev.target;
+        const val = target.textContent;
+        curSize !== val && setCurSize(val);
+    }
+
+    const swiperImagesVert = props.product.images.map((item, index)=> {
+        return (
+            <SwiperSlide key={index}>
+                <div className='Cart-Vertical-gallery-img' style={{background:`url(https://training.cleverland.by/shop${item.url}) center / contain no-repeat`}}></div>
+            </SwiperSlide>
+        )
     })
+
+    const swiperImagesBig = props.product.images.map((item, index)=> {
+        return (
+            <SwiperSlide key={index} style={{background:`url(https://training.cleverland.by/shop${item.url}) center / contain no-repeat`}}>
+            </SwiperSlide>
+        )
+    })
+
+    const colorsNamesAdd = props.product.images.map((item, index)=> {
+        return <span key={index}>{item.color}, </span>
+    })
+
+    // const imageColorsFiltered = props.product.images.reduce((res, cur)=>{
+    //     console.log(res);
+    //     return res.includes(cur.color) ? res : [...res, cur];
+    // }, []);
+    
+    // console.log(imageColorsFiltered);
+
+    const imageColors = props.product.images.map((item, index) => {
+        return <img src={`https://training.cleverland.by/shop${item.url}`} alt={item.color} key={index} />
+    })
+
+    const sizes = props.product.sizes.map((item, index) => {
+        return <div key={index}><span>{item}</span></div>
+    })
+
     return (
         
         <section className='Cart-page-body' data-test-id='product-page-women'>
@@ -72,7 +120,7 @@ const CartPageBody = () => {
                             // navigation={true} 
                             onSwiper={setThumbsSwiper}
                             spaceBetween={80}
-                            slidesPerView={4}
+                            slidesPerView={props.product.images.length}
                             freeMode={true}
                             watchSlidesProgress={true}
                             modules={[FreeMode, Navigation, Thumbs]} 
@@ -92,38 +140,10 @@ const CartPageBody = () => {
                                     direction:'horizontal'
                                 }
                             }} 
-                        >
-                            <SwiperSlide>
-                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='Cart-Vertical-gallery-img' style={{background:`url(${vert1}) no-repeat center center`}}></div>
-                            </SwiperSlide>
+                        >   
+                            {swiperImagesVert}
                         </Swiper>
                     </div>
-                    {/* <div className='Cart-Vertical-gallery'>
-                        <div className='Arrows'>
-                            <div className="Arrow">
-                                <img className="Arrow-center Arrow-gal-left" src={ArrowTop} alt='leftaroow' />
-                            </div>
-                            <div className="Arrow">
-                                <img className="Arrow-center Arrow-gal-right" src={ArrowBot} alt='rightaroow' />
-                            </div>
-                        </div>
-                        <div style={{background:`url(${vert1}) no-repeat center center`}}></div>
-                        <div style={{background:`url(${vert2}) no-repeat center center`}}></div>
-                        <div style={{background:`url(${vert3}) no-repeat center center`}}></div>
-                        <div style={{background:`url(${vert4}) no-repeat center center`}}></div>
-                    </div> */}
                     <Swiper 
                         navigation={true} 
                         modules={[Navigation, FreeMode, Thumbs]}
@@ -134,45 +154,20 @@ const CartPageBody = () => {
                         className="mySwiper Cart-main-photo"
                         data-test-id = 'product-slider'
                     >
-                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
-                        </SwiperSlide>
-                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
-                        </SwiperSlide>
-                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
-                        </SwiperSlide>
-                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
-                        </SwiperSlide>
-                        <SwiperSlide style={{background:`url(${Cartmain}) no-repeat center center`}}>
-                        </SwiperSlide>
+                        {swiperImagesBig}
                     </Swiper>
-                    {/* <div className='Cart-main-photo' 
-                        style={{background:`url(${Cartmain}) no-repeat center center`}}
-                    >
-                        <div className="Arrow Arrow-Left">
-                            <img className="Arrow-center" src={LeftArrow} alt='leftaroow' />
-                        </div>
-                        <div className="Arrow Arrow-Right">
-                            <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
-                        </div>
-                    </div> */}
                     <div className='Cart-descr'>
                         <div className='Cart-color'>
-                            <span>Color: </span><span>Blue</span>
+                            <span>Color: </span><span>{curColor}</span>
                         </div>
-                        <div className='Cart-other-colors'>
-                            <img src={color1} alt='col1' />
-                            <img src={color2} alt='col2' />
-                            <img src={color3} alt='col3' />
-                            <img src={color4} alt='col4' />
+                        <div className='Cart-other-colors' onClick={cbChangeColor}>
+                            {imageColors}
                         </div>
                         <div className='Cart-size'>
-                            <span>Size: </span><span>S</span>
+                            <span>Size: </span><span>{curSize}</span>
                         </div>
-                        <div className='Cart-allsizes'>
-                            <div><span>XS</span></div>
-                            <div><span>S</span></div>
-                            <div><span>M</span></div>
-                            <div><span>L</span></div>
+                        <div className='Cart-allsizes' onClick={cbChangeSize}>
+                            {sizes}
                         </div>
                         <div className='Cart-sizeguide'>
                             <img src={sizeguide} alt='gui' />
@@ -180,7 +175,7 @@ const CartPageBody = () => {
                         </div>
                         <div className='Bottom-bord'></div>
                         <div className='Cart-price-info'>
-                            <span className='Price'>$ 379.99</span>
+                            <span className='Price'>$ {props.product.price}</span>
                             <input type='button' value='Add to card' />
                             <img src={heart} alt='heart' />
                             <img src={compare} alt='compare' />
@@ -224,13 +219,13 @@ const CartPageBody = () => {
                             </div>
                             <div className='Cart-additional-content'>
                                 <div>
-                                    <span>Color: </span><span>Blue, White, Black, Grey</span>
+                                    <span>Color: </span><span>{colorsNamesAdd}</span>
                                 </div>
                                 <div>
-                                    <span>Size: </span><span>XS, S, M, L</span>
+                                    <span>Size: </span><SizesString sizesStr={props.product.sizes} />
                                 </div>
                                 <div>
-                                    <span>Material: </span><span>100% Polyester</span>
+                                    <span>Material: </span><span>{props.product.material}</span>
                                 </div>
                             </div>
                         </div>
@@ -238,48 +233,17 @@ const CartPageBody = () => {
                         <div className='Cart-reviews'>
                             <div className='Cart-reviews-name'><span>REVIEWS</span></div>
                             <div className='Cart-reviews-stars' >
-                                <div className='Women-Card-Stars'>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <span className='Cart-Page-Banner-bord-footer-span'>2 Reviews</span>
-                                </div>
+                            <div>
+                                <Stars number={props.product.rating} />
+                                <span className='Cart-Page-Banner-bord-footer-span'>{props.product.reviews.length} Reviews</span>
+                            </div>
                                 <div>
                                     <img src={question} alt='quis' />
                                     <span>Write a review</span>
                                 </div>
                             </div>
                             <div className='Cart-reviews-content'>
-                                <div>
-                                    <div className='Cart-reviews-content-author'>
-                                        <div><span>Oleh Chabanov</span></div>
-                                        <div className='Women-Card-Stars'>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                        </div>
-                                    </div>
-                                    <div className='Cart-reviews-content-text'>
-                                        <span>On the other hand, we denounce with righteous indignation and like men who are so beguiled and demoralized by the charms of pleasure of the moment</span>
-                                    </div>
-                                    <div className='Cart-reviews-content-author'>
-                                        <div><span>ShAmAn design</span></div>
-                                        <div className='Women-Card-Stars'>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                            <div><img src={fullStarSmall} alt='star' /></div>
-                                        </div>
-                                    </div>
-                                    <div className='Cart-reviews-content-text'>
-                                        <span>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</span>
-                                    </div>
-                                </div>
+                                <Reviews reviews={props.product.reviews} />
                             </div>
                             <div className='Bottom-bord'></div>
                         </div>
@@ -323,14 +287,6 @@ const CartPageBody = () => {
                     >
                         <div className='Cart-page-body-footer-name'>
                             <div><span>RELATED PRODUCTS</span></div>
-                            {/* <div className='Cart-page-body-footer-arrows'>
-                                <div className="Arrow">
-                                    <img className="Arrow-center" src={LeftArrow} alt='leftaroow' />
-                                </div>
-                                <div className="Arrow">
-                                    <img className="Arrow-center" src={RightArrow} alt='rightaroow' />
-                                </div>
-                            </div> */}
                         </div>
                         <SwiperSlide>
                             <Link to='/cart/women/1' data-test-id='clothes-card-women'>
@@ -416,80 +372,6 @@ const CartPageBody = () => {
                             </Link>
                         </SwiperSlide>
                     </Swiper>
-                    {/* <div className='Cart-page-body-footer-cards'>
-                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
-                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen1}) no-repeat center center`}}></div>
-                            <div className='Womens-Card-Descr'>
-                                <div className='Womens-Card-Name'>
-                                    <span>Women's tracksuit Q109</span>
-                                </div>
-                                <div className='Womens-Card-Price'>
-                                    <span>$ 30.00</span>
-                                </div>
-                                <div className='Women-Card-Stars'>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={emptyStar} alt='estar' /></div>
-                                </div>
-                            </div>
-                        </Link>
-                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
-                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen2}) no-repeat center center`}}></div>
-                            <div className='Womens-Card-Descr'>
-                                <div className='Womens-Card-Name'>
-                                    <span>Women's tracksuit Q109</span>
-                                </div>
-                                <div className='Womens-Card-Price'>
-                                    <span>$ 30.00</span>
-                                </div>
-                                <div className='Women-Card-Stars'>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={emptyStar} alt='estar' /></div>
-                                </div>
-                            </div>
-                        </Link>
-                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
-                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen3}) no-repeat center center`}}></div>
-                            <div className='Womens-Card-Descr'>
-                                <div className='Womens-Card-Name'>
-                                    <span>Women's tracksuit Q109</span>
-                                </div>
-                                <div className='Womens-Card-Price'>
-                                    <span>$ 30.00</span>
-                                </div>
-                                <div className='Women-Card-Stars'>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={emptyStar} alt='estar' /></div>
-                                </div>
-                            </div>
-                        </Link>
-                        <Link to='/cart/women/1' data-test-id='clothes-card-women'>
-                            <div className='Womens-Card-Image' style={{background:`url(${fotWomen4}) no-repeat center center`}}></div>
-                            <div className='Womens-Card-Descr'>
-                                <div className='Womens-Card-Name'>
-                                    <span>Women's tracksuit Q109</span>
-                                </div>
-                                <div className='Womens-Card-Price'>
-                                    <span>$ 30.00</span>
-                                </div>
-                                <div className='Women-Card-Stars'>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={fullStar} alt='star' /></div>
-                                    <div><img src={emptyStar} alt='estar' /></div>
-                                </div>
-                            </div>
-                        </Link>
-                    </div> */}
                 </div>
             </div>
         </section>

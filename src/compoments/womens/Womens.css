@@ -1,5 +1,5 @@
 .Womens {
-    padding-top: 96px;
+    padding-top: 68px;
 }
 .Womens-Header {
     display: flex;
@@ -25,6 +25,12 @@
     justify-content: space-between;
     flex-basis: 77%;
 }
+.No-opacity {
+    opacity: 1;
+}
+.Opacity {
+    opacity: 0.4;
+}
 .Womens-Links span {
     font-family: Spartan;
     font-style: normal;
@@ -34,6 +40,7 @@
     text-align: right;
     letter-spacing: 0.06em;
     color: #121212;
+    cursor: pointer;
 }
 .Womens-AllCards {
     display: flex;
@@ -47,13 +54,14 @@
 }
 .Womens-Card-Image {
     width: 255px;
-    height: 302px;
+    height: 368px;
     position: relative;
     margin-bottom: 16px;
 }
 .Womens-Card-Name {
     padding-bottom: 12px;
     float: left;
+    min-height: 3em;
 }
 .Womens-Card-Name>span {
     font-family: Spartan;
@@ -63,6 +71,7 @@
     line-height: 16px;
     color: #121212;
     opacity: 0.6;
+    /* text-align: left; */
 }
 .Womens-Card-Price {
     clear: left;
