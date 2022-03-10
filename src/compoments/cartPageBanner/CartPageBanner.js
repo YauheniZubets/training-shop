@@ -1,5 +1,4 @@
 import share from './img/share.svg';
-import fullStar from './img/fullStar.svg';
 import Stars from '../stars/stars';
 
 import './CartPageBanner.css';

@@ -5,13 +5,11 @@ import { useState } from "react";
 const PageMen = () => {
 
     const [sortValues, setSortValues] = useState(null);
-    const [sortArea, setSortArea] = useState(null);
 
     const sortValueFunc = (arr) => {
         if (arr) {
             
             setSortValues(arr);
-            // setSortArea(area);
         }
     }
 

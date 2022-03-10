@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import women1 from './img/women1.png';
 import Stars from '../stars/stars';
 
 const ProductCard = (props) => {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, FreeMode, Thumbs} from "swiper";
 import { Link } from 'react-router-dom';
@@ -11,21 +11,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
-// import "swiper/css/pagination";
 
 import ArrowTop from './img/arrowtop.svg';
 import ArrowBot from './img/arrowbottom.svg';
-// import LeftArrow from './img/leftArrow.svg';
-// import RightArrow from './img/rightArrow.svg';
-import vert1 from './img/vert1.png';
-// import vert2 from './img/vert2.png';
-// import vert3 from './img/vert3.png';
-// import vert4 from './img/vert4.png';
-import Cartmain from './img/cartMain.png';
-import color1 from './img/colors1.png';
-import color2 from './img/colors2.png';
-import color3 from './img/colors3.png';
-import color4 from './img/colors4.png';
 import sizeguide from './img/sizeguide.svg';
 import heart from './img/heart.svg';
 import compare from './img/compare.svg';
@@ -87,12 +75,6 @@ const CartPageBody = (props) => {
         return <span key={index}>{item.color}, </span>
     })
 
-    // const imageColorsFiltered = props.product.images.reduce((res, cur)=>{
-    //     console.log(res);
-    //     return res.includes(cur.color) ? res : [...res, cur];
-    // }, []);
-    
-    // console.log(imageColorsFiltered);
 
     const imageColors = props.product.images.map((item, index) => {
         return <img src={`https://training.cleverland.by/shop${item.url}`} alt={item.color} key={index} />

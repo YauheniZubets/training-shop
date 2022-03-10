@@ -16,9 +16,6 @@ class Womens extends React.PureComponent  {
         particular: 'isNewArrivals',
         filteredArray: []
     };
-    // const [particular, setParticular] = useState('isNewArrivals');
-    // const [filtered, setFiltered] = useState(PRODUCTS[props.gender]);
-    
 
     filterMenu = (value) => {
         this.setState({particular: value});
