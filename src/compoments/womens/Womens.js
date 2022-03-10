@@ -28,7 +28,7 @@ class Womens extends React.PureComponent  {
         let filteredCards = null;
         let productCards = null;
 
-        //console.log('props tosort', props.toSort);
+        console.log('props tosort', this.props);
         if (this.props.showBlockMenu) {
             filteredCards = PRODUCTS[this.props.gender].filter((item, index) => {
                 // console.log(item.particulars[particular]);
@@ -117,7 +117,7 @@ class Womens extends React.PureComponent  {
                                 : `MEN'S`
                             }</span>
                         </div>
-                        <BlockMenu filterMenu = {this.props.filterMenu} gender={this.props.gender} />
+                        <BlockMenu filterMenu = {this.filterMenu} gender={this.props.gender} />
                     </div>
                 }
                 <div className='Womens-AllCards'>

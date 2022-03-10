@@ -29,7 +29,6 @@ import discover from './img/discover.png';
 import american from './img/american.png';
 import fullStar from './img/fullStar.svg';
 import emptyStar from './img/emptyStar.svg';
-import fullStarSmall from './img/fullStarSmall.svg';
 import fotWomen1 from './img/fotwomen1.png';
 import fotWomen2 from './img/fotwomen2.png';
 import fotWomen3 from './img/fotwomen3.png';
