@@ -1,136 +1,109 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import BlockMenu from '../clothesBlockMenu/clothesBlockMenu';
 import ProductCard from '../ProductCard/ProductCard';
-import { PRODUCTS } from '../products';
+// import { PRODUCTS } from '../products';
 
 import './Womens.css';
 
 
-class Womens extends React.PureComponent  {
-    constructor (props){
-        super();
-    }
+const Womens = (props) => {
+    const [particular, setParticular] = useState('isNewArrivals');
+    const [filteredArray, setFilteredArray] = useState([]);
+    const [lastArea, setLastArea] = useState('');
 
-    state = {
-        particular: 'isNewArrivals',
-        filteredArray: []
-    };
+    const {products} = useSelector(state=>state.mainProducts);
 
-    filterMenu = (value) => {
-        this.setState({particular: value});
-    }
+    const filterMenu = (value) => setParticular(value);
+    let filteredCards = [];
 
-    
-
-    render () {
-
-        let filteredCards = null;
-        let productCards = null;
-
-        console.log('props tosort', this.props);
-        if (this.props.showBlockMenu) {
-            filteredCards = PRODUCTS[this.props.gender].filter((item, index) => {
-                // console.log(item.particulars[particular]);
-                return item.particulars[this.state.particular] === true; 
-            })
-            productCards = filteredCards.map((item, index) => {
-                return (
-                    <ProductCard 
-                        key={index} particulars={item.particulars} name={item.name} category={item.category}
-                        brand={item.brand} material={item.material} rating={item.rating} price={item.price}
-                        sizes={item.sizes} discont={item.discount} reviews={item.reviews} images={item.images}
-                        id={item.id} gender={this.props.gender}
-                    />
-                )
-            })
-        } else if (this.props.images.length || this.props.sizes.length || this.props.brand.length) {
-            filteredCards = PRODUCTS[this.props.gender].filter((item, index) => {
-                return ()=>{
-                    switch (this.props.area) {
-                    case 'images':
-                        for (const i of item[this.props.area]) {
-                            for (const j of this.props.images) {
-                                if (i.color.includes(j)) return item;
-                            }
-                        }
-                        break;
-                    case 'sizes':
-                        for (const i of item[this.props.area]) {
-                            for (const j of this.props.sizes) {
-                                if (i.includes(j)) return item;
-                            }
-                        }
-                        break;
-                    case 'brand':
-                        for (const j of this.props.brand) {
-                            if (j === item.brand) return item;
-                        }
-                        break;
-                    case 'price':
-                        for (const j of this.props.price) {
-                            if (j > item.price[0] && j < item.price[1]) return item;
-                        }
-                        break;
-                
-                    default:
-                        break;
+    useEffect(()=>{
+        if (props.lastArea) {
+            filteredCards = products[props.gender].filter((item, index) => {
+                if (props.lastArea.length === 2) { //цвета
+                    return item[props.lastArea[0]].some(b=>props.arrayToSort[props.lastArea[0]].includes(b[props.lastArea[1]]));
+                } else if (props.lastArea[0] === 'sizes') {
+                    return item[props.lastArea[0]].some(b=>props.arrayToSort[props.lastArea[0]].includes(b));
+                } else if (props.lastArea[0] === 'brand') {
+                    return props.arrayToSort[props.lastArea[0]].some(b=>item[props.lastArea[0]] === b);
+                } else {
+                    // return props.arrayToSort[props.lastArea[0]].filter(b=>item[props.lastArea[0]] < b);
                 }
-                }
-                
             })
-            productCards = filteredCards.map((item, index) => {
-                return (
-                    <ProductCard 
-                        key={index} particulars={item.particulars} name={item.name} category={item.category}
-                        brand={item.brand} material={item.material} rating={item.rating} price={item.price}
-                        sizes={item.sizes} discont={item.discount} reviews={item.reviews} images={item.images}
-                        id={item.id} gender={this.props.gender}
-                    />
-                )
-            })
+        setFilteredArray(filteredCards);
+        setLastArea(props.lastArea);
+        } 
+    }, [props.arrayToSort]);
+
+    let productCards = null;
+
+    if (props.showBlockMenu) {
+        filteredCards = products[props.gender].filter((item, index) => {
+            return item.particulars[particular] === true; 
+        })
+        productCards = filteredCards.map((item, index) => {
+            return (
+                <ProductCard 
+                    key={index} particulars={item.particulars} name={item.name} category={item.category}
+                    brand={item.brand} material={item.material} rating={item.rating} price={item.price}
+                    sizes={item.sizes} discont={item.discount} reviews={item.reviews} images={item.images}
+                    id={item.id} gender={props.gender}
+                />
+            )
+        })
+    } else if (props.lastArea && filteredArray.length !==0) {
+        
+        productCards = filteredArray.map((item, index) => {
             
-        } else {
-            productCards = PRODUCTS[this.props.gender].map((item, index) => {
-                return (
-                    <ProductCard 
-                        key={index} particulars={item.particulars} name={item.name} category={item.category}
-                        brand={item.brand} material={item.material} rating={item.rating} price={item.price}
-                        sizes={item.sizes} discont={item.discount} reviews={item.reviews} images={item.images}
-                        id={item.id} gender={this.props.gender}
-                    />
-                )
-            })
-        };
-
-
-        return (
+            return (
+                <ProductCard 
+                    key={index} particulars={item.particulars} name={item.name} category={item.category}
+                    brand={item.brand} material={item.material} rating={item.rating} price={item.price}
+                    sizes={item.sizes} discont={item.discount} reviews={item.reviews} images={item.images}
+                    id={item.id} gender={props.gender}
+                />
+            )
+        })
+    } else {
+        productCards = products[props.gender].map((item, index) => {
+            return (
+                <ProductCard 
+                    key={index} particulars={item.particulars} name={item.name} category={item.category}
+                    brand={item.brand} material={item.material} rating={item.rating} price={item.price}
+                    sizes={item.sizes} discont={item.discount} reviews={item.reviews} images={item.images}
+                    id={item.id} gender={props.gender}
+                />
+            )
+        })
+    };
+    return (
         <section className='Womens' data-test-id='clothes-women'>
             <div className='Main-Info'>
                 {
-                    this.props.showBlockMenu && 
+                    props.showBlockMenu && 
                     <div className='Womens-Header'>
                         <div className='Womens-Name'>
                             <span>{
-                                this.props.gender === 'women' 
+                                props.gender === 'women' 
                                 ? `WOMEN'S`
                                 : `MEN'S`
                             }</span>
                         </div>
-                        <BlockMenu filterMenu = {this.filterMenu} gender={this.props.gender} />
+                        <BlockMenu filterMenu = {filterMenu} gender={props.gender} />
                     </div>
                 }
                 <div className='Womens-AllCards'>
                     {productCards}
                 </div>
             </div>
-            <div className='Womens-See-All'>
-                <span>See All</span>
-            </div>
+            {
+                props.showBlockMenu &&
+                <div className='Womens-See-All'>
+                    <span>See All</span>
+                </div>
+            }
         </section>
     )
-    }
-    
 }
 
 export default Womens;

@@ -10,6 +10,7 @@ import MenBanner from './img/men-banner.png';
 import AccesBanner from './img/acces-banner.png';
 
 import './Header.css';
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -45,15 +46,19 @@ const Header = () => {
                         </Swiper>
                     <div className="Banners">
                         <div className="MenWomanBanner">
-                            <div className="Woman-Banner" style={{background:`url(${WomanBanner}) no-repeat center center`}}>
-                                <div className="Banner Small-Center Small-banner">
-                                    <span className="Small-Banners">WOMEN</span>
+                                <div className="Woman-Banner" style={{background:`url(${WomanBanner}) no-repeat center center`}}>
+                                    <Link to='/women'>
+                                        <div className="Banner Small-Center Small-banner">
+                                            <span className="Small-Banners">WOMEN</span>
+                                        </div>
+                                    </Link>
                                 </div>
-                            </div>
                             <div className="Men-Banner" style={{background:`url(${MenBanner}) no-repeat center center`}}>
-                                <div className="Banner Small-Center Small-banner">
-                                    <span className="Small-Banners">MEN</span>
-                                </div>
+                                <Link to='/men'>
+                                    <div className="Banner Small-Center Small-banner">
+                                        <span className="Small-Banners">MEN</span>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="Acc-Banner" style={{background:`url(${AccesBanner}) no-repeat center center`}}>

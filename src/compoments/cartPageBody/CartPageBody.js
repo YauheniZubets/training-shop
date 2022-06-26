@@ -1,16 +1,20 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, FreeMode, Thumbs} from "swiper";
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Stars from '../stars/stars';
 import SizesString from "../sizesString/SizesString";
 import Reviews from "../Reviews/Reviews";
+import Review from "../review/Review";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import classnames from 'classnames';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 import ArrowTop from './img/arrowtop.svg';
 import ArrowBot from './img/arrowbottom.svg';
@@ -41,7 +45,26 @@ const CartPageBody = (props) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null); //for swiper
     const [curColor, setCurColor] = useState(props.product.images[0].color);
     const [curSize, setCurSize] = useState(props.product.sizes[0]);
-    console.log('props in cart: ', props);
+    const [carted, changeCarted] = useState(false); //когда true - то в корзине
+    const [reviewField, openedReview] = useState(false);
+
+    useEffect(()=> {
+        let prodToFind;
+        if (props.prods.prods.length) { // проверка есть ли товар в корзине
+            prodToFind = props.prods.prods.find(i=>{ //возможно потом придется делать фильтр по id
+                return i.color === curColor && i.size === curSize && i.product.name === props.product.name
+            })
+            prodToFind ? changeCarted(true) : changeCarted(false);
+        } else {
+            !prodToFind && changeCarted(false);
+        }
+        reviewField ? disablePageScroll(document.body) : enablePageScroll(document.body);
+    }, [curColor, curSize, props, reviewField]);
+
+    useEffect(()=> {
+        setCurColor(props.product.images[0].color);
+        setCurSize(props.product.sizes[0]);
+    },[props.product])
 
     const cbChangeColor = (ev) => {
         const target = ev.target;
@@ -52,7 +75,28 @@ const CartPageBody = (props) => {
     const cbChangeSize = (ev) => {
         const target = ev.target;
         const val = target.textContent;
-        curSize !== val && setCurSize(val);
+        if (val) curSize !== val && setCurSize(val);
+    }
+
+    const addToShoppingCart = () => {
+        if (!carted) {
+            props.dispatch({
+                type:"ADD_PROD",
+                newProduct: props.product,
+                name: props.product.name,
+                color: curColor,
+                size: curSize
+            });
+            changeCarted(true);
+        } else {
+            props.dispatch({
+                type:"DEL_PROD",
+                name: props.product.name,
+                color: curColor,
+                size: curSize
+            });
+            changeCarted(false);
+        }
     }
 
     const swiperImagesVert = props.product.images.map((item, index)=> {
@@ -73,18 +117,24 @@ const CartPageBody = (props) => {
     const colorsNamesAdd = props.product.images.map((item, index)=> {
         return <span key={index}>{item.color}, </span>
     })
-
+    
+    let uniqeColorsSet = new Set ([]);
+    props.product.images.forEach(item => {
+        uniqeColorsSet.add(item.color);
+    });
 
     const imageColors = props.product.images.map((item, index) => {
-        return <img src={`https://training.cleverland.by/shop${item.url}`} alt={item.color} key={index} />
+        return uniqeColorsSet.has(item.color) && uniqeColorsSet.delete(item.color)
+        &&  <img src={`https://training.cleverland.by/shop${item.url}`} alt={item.color} key={index} 
+        className={classnames({'Cart-other-border': curColor===item.color})} />
     })
 
     const sizes = props.product.sizes.map((item, index) => {
-        return <div key={index}><span>{item}</span></div>
+        return <div key={index} 
+        className={classnames({'Cart-other-border': curSize===item})}><span>{item}</span></div>
     })
-
+    
     return (
-        
         <section className='Cart-page-body' data-test-id='product-page-women'>
             <div className='Main-Info'>
                 <div className='Cart-page-body-content'>
@@ -157,7 +207,8 @@ const CartPageBody = (props) => {
                         <div className='Bottom-bord'></div>
                         <div className='Cart-price-info'>
                             <span className='Price'>$ {props.product.price}</span>
-                            <input type='button' value='Add to card' />
+                            <button  
+                                onClick={addToShoppingCart}>{carted ? 'Remove' :'Add to card'}</button>
                             <img src={heart} alt='heart' />
                             <img src={compare} alt='compare' />
                         </div>
@@ -218,7 +269,7 @@ const CartPageBody = (props) => {
                                 <Stars number={props.product.rating} />
                                 <span className='Cart-Page-Banner-bord-footer-span'>{props.product.reviews.length} Reviews</span>
                             </div>
-                                <div>
+                                <div onClick={()=>openedReview(true)}>
                                     <img src={question} alt='quis' />
                                     <span>Write a review</span>
                                 </div>
@@ -230,6 +281,15 @@ const CartPageBody = (props) => {
                         </div>
                     </div>
                 </div>
+                {
+                    reviewField 
+                    &&  <div className="Review-overload">
+                            <Review id={props.product.id} 
+                                close={()=>openedReview(false)} 
+                                update={props.update}    
+                            />
+                        </div>
+                }
                 <div className='Cart-page-body-footer'>
                     <Swiper
                         slidesPerView={4}
@@ -359,4 +419,10 @@ const CartPageBody = (props) => {
     )
 }
 
-export default CartPageBody;
+const mapStateToProps = function (state) {
+    return {
+        prods: state.prods
+    }
+}
+
+export default connect(mapStateToProps)(CartPageBody);

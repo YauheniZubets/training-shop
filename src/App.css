@@ -1,5 +1,32 @@
 .App {
   text-align: center;
+  /* position: relative; */
 }
 
+.preloader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: darkgray;
+  opacity: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.url-error {
+  height: 40px;
+  background-color: rgb(245, 162, 131);
+  border: solid 1px rgb(247, 68, 3);
+  width: 100%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: black;
+  padding-top: 24px;
+  flex-basis: 13px;
+}
 

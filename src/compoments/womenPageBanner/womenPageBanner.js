@@ -9,63 +9,100 @@ import './womenPageBanner.css';
 
 
 const WomenPageBanner = (props) => {
+    const [showFilter, setFilter] = useState(false);
+
+    const [toProps, setToProps] = useState({
+        images: [],
+        sizes: [],
+        brand: [],
+        price: []
+    })
+    const [lastArea, setLastArea] = useState('');
 
     useEffect(()=>{
-        console.log('useeffect: ', imagesArr);
-        props.sortValueFunc(imagesArr, sizes, brand, area, price);
-    })
-
-    const [showFilter, setFilter] = useState(false);
-    
-    const [imagesArr, setImagesArr] = useState([]);
-    const [sizes, setSizes] = useState([]);
-    const [brand, setBrand] = useState([]);
-    const [price, setPrice] = useState([]);
-    const [area, setArea] = useState('');
+        props.sortValueFunc(toProps, lastArea);
+    }, [toProps])
 
     const cbShowFilter = () => {
         showFilter ? setFilter(false) : setFilter(true);
+    }
+
+    const cbChangeState = (ar, val) => {
+        let set = new Set(toProps[ar]);
+        if (ar === 'price') {
+            let minVal = val.match(/[0-9]+/);
+            let maxVal = val.match(/[0-9]+$/) || 2500;
+            // let price = [];
+            // price.push(+minVal[0], +maxVal[0]);
+            set.has(+maxVal[0]) ? set.delete(+maxVal[0]) : set.add(+maxVal[0]);
+            set.has(+minVal[0]) ? set.delete(+minVal[0]) : set.add(+minVal[0]);
+            
+            
+            // let minimal = Math.min.apply(null, Array.from(set));
+            // let maximal = Math.max.apply(null, Array.from(set));
+            // let filteredPrice = Array.from(set).filter((item)=>{
+            //     return item === minimal || item === maximal;
+            // })
+            // set.clear();
+            // console.log('filteredPrice: ', filteredPrice);
+            // set.add(filteredPrice);
+            
+            console.log(set);
+        } else {
+            set.has(val) ? set.delete(val) : set.add(val);
+        }   
+        let newArrayFromSet = Array.from(set);
+        ar === 'images' ? setLastArea([ ar,'color']) : setLastArea([ar]);
+        
+        setToProps((state)=> {
+            return {...state, [ar]: newArrayFromSet}
+        })
     }
 
     const cbFilterChange = (ev) => {
         const target = ev.target;
         const value = target.value;
         const area = target.getAttribute('area');
-        setArea(area);
-        switch (area) {
-            case 'images':
-                let imagesSet = new Set(imagesArr);
-                imagesSet.has(value) ? imagesSet.delete(value) : imagesSet.add(value);
-                let setToArr = Array.from(imagesSet);
-                setImagesArr(setToArr);
-                break;
-            case 'sizes':
-                let sizesSet = new Set(sizes);
-                sizesSet.has(value) ? sizesSet.delete(value) : sizesSet.add(value);
-                let setToArrSizes = Array.from(sizesSet);
-                setSizes(setToArrSizes);
-                break;
-            case 'brand':
-                let brandSet = new Set(brand);
-                brandSet.has(value) ? brandSet.delete(value) : brandSet.add(value);
-                let setToArrBrand = Array.from(brandSet);
-                setBrand(setToArrBrand);
-                break;
-            case 'price':
-                let minVal = value.match(/[0-9]+/);
-                let maxVal = value.match(/[0-9]+$/);
-                price.push(+minVal[0], +maxVal[0]);
-                let minimal = Math.min.apply(null, price);
-                let maximal = Math.max.apply(null, price);
-                let filteredPrice = price.filter((item)=>{
-                    return item === minimal || item === maximal;
-                })
-                setPrice(filteredPrice);
-                break;
+
         
-            default:
-                break;
-        }
+        cbChangeState(area, value);
+        // setToProps({...toProps, [area]: [area].push(value) });
+
+        // setArea(area);
+        // switch (area) {
+        //     case 'images':
+        //         let imagesSet = new Set(imagesArr);
+        //         imagesSet.has(value) ? imagesSet.delete(value) : imagesSet.add(value);
+        //         let setToArr = Array.from(imagesSet);
+        //         setImagesArr(setToArr);
+        //         break;
+        //     case 'sizes':
+        //         let sizesSet = new Set(sizes);
+        //         sizesSet.has(value) ? sizesSet.delete(value) : sizesSet.add(value);
+        //         let setToArrSizes = Array.from(sizesSet);
+        //         setSizes(setToArrSizes);
+        //         break;
+        //     case 'brand':
+        //         let brandSet = new Set(brand);
+        //         brandSet.has(value) ? brandSet.delete(value) : brandSet.add(value);
+        //         let setToArrBrand = Array.from(brandSet);
+        //         setBrand(setToArrBrand);
+        //         break;
+        //     case 'price':
+        //         let minVal = value.match(/[0-9]+/);
+        //         let maxVal = value.match(/[0-9]+$/);
+        //         price.push(+minVal[0], +maxVal[0]);
+        //         let minimal = Math.min.apply(null, price);
+        //         let maximal = Math.max.apply(null, price);
+        //         let filteredPrice = price.filter((item)=>{
+        //             return item === minimal || item === maximal;
+        //         })
+        //         setPrice(filteredPrice);
+        //         break;
+        
+        //     default:
+        //         break;
+        // }
     }
 
     let colorsSet = new Set();

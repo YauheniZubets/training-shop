@@ -42,7 +42,7 @@
     padding-bottom: 16px;
 } */
 .Cart-main-photo {
-    height: 560px;
+    height: 450px;
     flex-basis: 35%;
     position: relative;
 }
@@ -78,9 +78,13 @@
     flex-direction: row;
 }
 .Cart-other-colors>img {
-    padding-right: 16px;
+    margin-right: 16px;
     width: 54px;
     height: 64px;
+    box-sizing: border-box;
+}
+.Cart-other-border {
+    border: solid black 1px;
 }
 .Cart-size {
     padding-top: 32px;
@@ -110,14 +114,15 @@
     flex-direction: row;
 }
 .Cart-allsizes>div {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     background: #F8F8F8;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 16px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 .Cart-allsizes>div>span {
     font-family: Spartan;
@@ -155,6 +160,7 @@
 }
 .Cart-price-info * {
     margin-right: 30px;
+    cursor: pointer;
 }
 .Price {
     font-family: Spartan;
@@ -165,7 +171,7 @@
     text-transform: uppercase;
     color: #121212;
 }
-.Cart-price-info>input {
+.Cart-price-info>button {
     width: 156px;
     height: 48px;
     background: #121212;
@@ -309,6 +315,7 @@
     color: #121212;
     opacity: 0.6;
     padding-left: 6px;
+    cursor: pointer;
 }
 .Cart-reviews-content-author {
     display: flex;
@@ -407,7 +414,7 @@
 }
 @media screen and (max-width: 1050px) {
     .Cart-price-info * {
-        margin-right: 20px;
+        margin-right: 15px;
     }
     .Cart-shipping>div>span {
         font-size: 10px;

@@ -90,6 +90,7 @@
 }
 .Search-Bar-Cart {
     position: relative;
+    cursor: pointer;
 }
 .Search-Bar-Numb>span {
     font-family: Spartan;

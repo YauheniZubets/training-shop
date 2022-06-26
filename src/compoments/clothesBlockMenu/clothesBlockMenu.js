@@ -2,7 +2,6 @@ import { useState } from "react";
 import { MAIN_CLOTHES_BLOCK_MENU } from "../block-menu";
 
 const BlockMenu = (props) => {
-    console.log('props: ', props);
 
     const [menuOpacity, setOpacity] = useState(0);
 
@@ -11,8 +10,8 @@ const BlockMenu = (props) => {
         let value = target.value;
         if (target.getAttribute('particular-name')) {
             value = target.getAttribute('particular-name');
-            props.filterMenu(value);
             setOpacity(target.id);
+            props.filterMenu(value);
         }
     }
 
@@ -21,7 +20,7 @@ const BlockMenu = (props) => {
                 <div key={index} >
                     <span 
                         particular-name={item.particularName} id={index} 
-                        className={menuOpacity===index ? 'No-opacity' : 'Opacity'} 
+                        className={+menuOpacity===index ? 'No-opacity' : 'Opacity'} 
                         data-test-id={`clothes-${props.gender}-${item.particularName}`}
                     >
                         {item.name}

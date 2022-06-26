@@ -3,29 +3,20 @@ import WomenPageBanner from "../../compoments/womenPageBanner/womenPageBanner";
 import { useState } from "react";
 
 const PageMen = () => {
+    const [toProps, setNewProps] = useState(null);
+    const [lastArea, setLastArea] = useState('');
 
-    const [imagesArr, setImagesArr] = useState([]);
-    const [sizes, setSizes] = useState([]);
-    const [brand, setBrand] = useState([]);
-    const [area, setArea] = useState('');
-    const [price, setPrice] = useState([]);
-
-
-    const sortValueFunc = (images, sizes, brand, area, price) => {
-        setImagesArr(images);
-        setSizes(sizes);
-        setBrand(brand);
-        setArea(area);
-        setPrice(price);
+    const sortValueFunc = (toProps, lastArea) => {
+        setNewProps(toProps);
+        setLastArea(lastArea);
     }
 
     return ( <>
-        <WomenPageBanner sortValueFunc={sortValueFunc} gender='men' />
-        <Womens data-test-id='product-page-men' 
-            showBlockMenu={false} gender='men' 
-            images={imagesArr} sizes={sizes} brand={brand}
-            area ={area} price={price}
-        />
+         <WomenPageBanner sortValueFunc={sortValueFunc} gender='men' />
+                <Womens  
+                    showBlockMenu={false} gender='men' 
+                    arrayToSort = {toProps} lastArea={lastArea}
+                />
     </>
         
     )

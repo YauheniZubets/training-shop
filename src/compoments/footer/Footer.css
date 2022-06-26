@@ -35,7 +35,7 @@
     font-weight: 500;
     font-size: 13px;
     line-height: 18px;
-    color: #FFFFFF;
+    color: #000000;
     opacity: 0.4;
     margin-right: 12px;
     box-sizing: border-box;
@@ -53,8 +53,11 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #FFFFFF;
-    opacity: 0.9;
     border: 1px solid #FFFFFF;
+}
+.Footer-form {
+    display: flex;
+    flex-direction: row;
 }
 .Footer-links {
     padding-top: 40px;

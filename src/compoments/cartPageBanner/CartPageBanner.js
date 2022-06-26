@@ -4,7 +4,6 @@ import Stars from '../stars/stars';
 import './CartPageBanner.css';
 
 const CartPageBanner = (props) => {
-    console.log('props: ', props.product);
     return (
         <section className="Cart-Page-Banner">
             <div className='Cart-Page-Banner-bord'>

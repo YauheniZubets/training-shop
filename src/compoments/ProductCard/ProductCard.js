@@ -14,13 +14,12 @@ const ProductCard = (props) => {
         const imageDefault = props.images[0].url;
         return imageDefault;
     }
-
+    
     return (
         <div className='Womens-Card'>
-            <Link to={`/${props.gender}/${props.id}`} data-test-id='clothes-card-women'>
+            <Link to={`/${props.gender}/${props.id}`}>
                 <div className='Womens-Card-Image' style={{
                         background:`url('https://training.cleverland.by/shop${productImage()}') center / contain no-repeat `,
-                        
                     }}>
                     {
                         props.discont &&

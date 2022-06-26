@@ -57,6 +57,7 @@
     opacity: 0.4;
     text-align: center;
     box-sizing: border-box;
+    margin-bottom: 4%;
 }
 .Big-Banner-button {
     width: 340px;
@@ -64,6 +65,7 @@
     background: #121212;
     border: 2px solid #121212;
     box-sizing: border-box;
+    position: relative;
 }
 .Big-Banner-button>span {
     font-family: Spartan;
@@ -76,6 +78,15 @@
     text-transform: uppercase;
     color: #FFFFFF;
     opacity: 0.9;
+}
+.Review-submitted {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #01fc0e;
+    margin: 0;
 }
 .Big-Banner-image-girl {
     position: absolute;

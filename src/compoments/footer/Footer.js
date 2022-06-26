@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import Social from '../social/Social';
 
+import { Formik, Field, Form } from 'formik';
+import * as yup from 'yup';
+import axios from 'axios';
+import classNames from 'classnames';
+import prel from './img/circlePr.gif';
+
 import phoneLogo from '../../pages/pagesLinks/PhoneLogo.svg';
 import clockLogo from './img/clock.svg';
 import mapLogo from './img/mapLogo.svg';
@@ -17,6 +23,28 @@ import './Footer.css';
 
 
 const Footer = () => {
+
+    const validationSchema = yup.object().shape({
+        email: yup.string().email().typeError('Should be a email').required('Required field')
+    })
+
+    const axiosedSubscr = (email, url) => {
+        try {
+            return axios.post(url, 
+            {   
+                "mail": `${email}`
+            })
+            .then(response => response)
+            .catch(err => {
+                console.log('err: ', err);
+                throw new Error();
+            })
+        } catch (error) {
+            console.log('error on the server: ', error);
+            return error;
+        }
+    }
+
     return (
         <section className='Footer' data-test-id='footer'>
             <div className='Footer-line'>
@@ -26,8 +54,58 @@ const Footer = () => {
                             <span>BE IN TOUCH WITH US:</span>
                         </div>
                         <div>
-                            <input className='Footer-line-input' type='text' placeholder='Enter your email' />
-                            <input className='Footer-line-button' type='button' value='Join Us' />
+                            <Formik 
+                                initialValues={{
+                                    email: ''
+                                }}
+                                onSubmit = {(values, {resetForm, setErrors, setStatus} ) => {
+                                    axiosedSubscr(values.email, `https://training.cleverland.by/shop/email`)
+                                    .then(() => {
+                                        resetForm(); //метод формика
+                                        setStatus('Done successfully');
+                                    }) 
+                                    .catch((err) => {
+                                        console.log('err: ', err);
+                                        setErrors({'submit': "Review request error"});
+                                    })
+                                }}   
+                                validateOnMount
+                                validationSchema={validationSchema}
+                            >
+                                {({handleSubmit, values, handleChange, errors, touched, handleBlur, isValid, isSubmitting, status})=> {
+                                    return (
+                                        <Form onSubmit={handleSubmit} className='Footer-form'>
+                                            <div>
+                                                <Field 
+                                                type='text'
+                                                name='email'
+                                                values={values.email}
+                                                placeholder='Enter your email'
+                                                className='Footer-line-input'
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                />
+                                                {touched.email && errors.email && <p className='Review-error'>{errors.email}</p>}
+                                                {status && <p className='Review-submitted'>Sent successfully</p>}
+                                            </div>
+                                            <button 
+                                                type="submit"
+                                                name='submit'
+                                                disabled={!isValid || isSubmitting}  
+                                                className={classNames('Footer-line-button', {['Review-submit-opacity']: !isValid || isSubmitting})}
+                                            
+                                            >
+                                                {isSubmitting && <img src={prel} alt='preloader' className='Review-submit-preloader'/>}
+                                                Join Us
+                                            </button>
+                                            {errors.submit && <p className='Review-error'>{errors.submit}</p>}
+                                        </Form>
+                                    )
+                                }}
+
+                            </Formik>
+                            {/* <input className='Footer-line-input' type='text' placeholder='Enter your email' /> */}
+                            {/* <input className='Footer-line-button' type='button' value='Join Us' /> */}
                         </div>
                         <div>
                             <Social />

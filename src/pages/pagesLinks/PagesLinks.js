@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+
+import ShoppingCart from '../../compoments/ShoppingCart/ShoppingCart';
 
 import PhoneLogo from './PhoneLogo.svg';
 import MapPoint from './map.svg';
@@ -20,22 +23,28 @@ import "@fontsource/playfair-display-sc";
 const PagesLinks = () => {
 
     const [isMenuOpen, toogleMenu] = useState(false);
+    const [isShoppingCart, toogleShoppingCart] = useState(false);
 
     useEffect(()=>{
         isMenuOpen ? disablePageScroll(document.body) : enablePageScroll(document.body);
+        isShoppingCart ? disablePageScroll(document.body) : enablePageScroll(document.body);
     })
+    const count = useSelector(state => state.prods.prods.length); // вместо коннект получает стейт редакса при обновлении
 
-    function onClickCross () {
-        toogleMenuMode();
-    }
+    function onClickCross () {toogleMenuMode();}
 
     const onClickNav = (ev) =>  {
         const target = ev.target;
         if (isMenuOpen && !target.closest('Mobile-Menu')) toogleMenu(!isMenuOpen);
     }
 
-    function toogleMenuMode() {
-        toogleMenu(!isMenuOpen);
+    function toogleMenuMode() {toogleMenu(!isMenuOpen);}
+
+    const cbShowShoppingCart = () => toogleShoppingCart(!isShoppingCart);
+
+    const closeShoppingCart = () => {
+        console.log('close-cart');
+        toogleShoppingCart(!isShoppingCart);
     }
 
     return(
@@ -64,14 +73,14 @@ const PagesLinks = () => {
             <div className='All-Links'>
                 <div className='Main-Info Header'>
                     <div className='Shop-Name'>
-                        <Link to='/' data-test-id='header-logo-link'>
+                        <Link to='/'>
                             <span>CleverShop</span>
                         </Link>
                     </div>
-                    <div className='Nav-Links' data-test-id='menu'>
+                    <div className='Nav-Links'>
                         <Link to='/'><span>About Us</span></Link>
-                        <Link to='/women' data-test-id='menu-link-women'><span>Women</span></Link>
-                        <Link to='/men' data-test-id='menu-link-men'><span>Men</span></Link>
+                        <Link to='/women' ><span>Women</span></Link>
+                        <Link to='/men' ><span>Men</span></Link>
                         <Link to='/'><span>Beauty</span></Link>
                         <Link to='/'><span>Accessories</span></Link>
                         <Link to='/'><span>Blog</span></Link>
@@ -81,8 +90,15 @@ const PagesLinks = () => {
                         <div><img src={Search} alt='search'/></div>
                         <div><img src={World} alt='world'/></div>
                         <div><img src={Login} alt='login' /></div>
-                        <div className='Search-Bar-Cart'><img src={Cart} alt='cart' />
-                            <div className='Search-Bar-Numb'><span>2</span></div>
+                        <div className='Search-Bar-Cart' onClick={cbShowShoppingCart}>
+                            <img src={Cart} alt='cart' />
+                            {
+                                count>0 &&
+                                <div className='Search-Bar-Numb'><span>{count}</span></div>
+                            }
+                        </div>
+                        <div>
+                            <ShoppingCart isOpen={isShoppingCart} isClosed={closeShoppingCart} />
                         </div>
                         <div 
                             className={classNames('Burger', {visible: isMenuOpen})} 
